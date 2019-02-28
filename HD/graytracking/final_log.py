@@ -1,4 +1,4 @@
-# right log test version
+# HD graytrackinglog final version
 
 import os
 import csv

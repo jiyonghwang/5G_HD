@@ -1,4 +1,4 @@
-# ca_kt v1.4 CA_KT final
+# ca_kt v1.4 CA_KT keithley2700 final
 
 import time
 import csv
