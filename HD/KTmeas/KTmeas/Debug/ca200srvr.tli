@@ -1,0 +1,741 @@
+﻿// Created by Microsoft (R) C/C++ Compiler Version 11.00.50727.1 (2d5840bf).
+//
+// d:\sw measurement\ktmeas\ktmeas\debug\ca200srvr.tli
+//
+// Wrapper implementations for Win32 type library Libs\CA200Srvr.dll
+// compiler-generated file created 02/13/19 at 20:48:03 - DO NOT EDIT!
+
+#pragma once
+
+//
+// interface IProbe wrapper method implementations
+//
+
+float IProbe::GetX ( ) {
+    float _result = 0;
+    HRESULT _hr = get_X(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+float IProbe::GetY ( ) {
+    float _result = 0;
+    HRESULT _hr = get_Y(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+float IProbe::GetZ ( ) {
+    float _result = 0;
+    HRESULT _hr = get_Z(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+float IProbe::GetFlckrJEITA ( ) {
+    float _result = 0;
+    HRESULT _hr = get_FlckrJEITA(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+long IProbe::GetNumber ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Number(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+_bstr_t IProbe::GetID ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_ID(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+void IProbe::PutID ( _bstr_t ProbeIDVal ) {
+    HRESULT _hr = put_ID(ProbeIDVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+_bstr_t IProbe::GetSerialNO ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_SerialNO(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+float IProbe::GetLv ( ) {
+    float _result = 0;
+    HRESULT _hr = get_Lv(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+float IProbe::Getud ( ) {
+    float _result = 0;
+    HRESULT _hr = get_ud(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+float IProbe::Getvd ( ) {
+    float _result = 0;
+    HRESULT _hr = get_vd(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+long IProbe::GetT ( ) {
+    long _result = 0;
+    HRESULT _hr = get_T(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+float IProbe::GetdEUser ( ) {
+    float _result = 0;
+    HRESULT _hr = get_dEUser(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+float IProbe::GetFlckrFMA ( ) {
+    float _result = 0;
+    HRESULT _hr = get_FlckrFMA(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+float IProbe::Getsy ( ) {
+    float _result = 0;
+    HRESULT _hr = get_sy(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+float IProbe::Getsx ( ) {
+    float _result = 0;
+    HRESULT _hr = get_sx(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+float IProbe::Getduv ( ) {
+    float _result = 0;
+    HRESULT _hr = get_duv(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+float IProbe::GetusUser ( ) {
+    float _result = 0;
+    HRESULT _hr = get_usUser(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+float IProbe::GetvsUser ( ) {
+    float _result = 0;
+    HRESULT _hr = get_vsUser(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+float IProbe::GetLsUser ( ) {
+    float _result = 0;
+    HRESULT _hr = get_LsUser(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+float IProbe::GetLvfL ( ) {
+    float _result = 0;
+    HRESULT _hr = get_LvfL(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+float IProbe::GetR ( ) {
+    float _result = 0;
+    HRESULT _hr = get_R(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+float IProbe::GetG ( ) {
+    float _result = 0;
+    HRESULT _hr = get_G(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+float IProbe::GetB ( ) {
+    float _result = 0;
+    HRESULT _hr = get_B(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+long IProbe::GetRD ( ) {
+    long _result = 0;
+    HRESULT _hr = get_RD(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+long IProbe::GetRAD ( ) {
+    long _result = 0;
+    HRESULT _hr = get_RAD(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+long IProbe::GetRFMA ( ) {
+    long _result = 0;
+    HRESULT _hr = get_RFMA(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+long IProbe::GetRJEITA ( ) {
+    long _result = 0;
+    HRESULT _hr = get_RJEITA(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+float IProbe::GetSpectrum ( long Frequency ) {
+    float _result = 0;
+    HRESULT _hr = raw_GetSpectrum(Frequency, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// interface IProbes wrapper method implementations
+//
+
+IProbePtr IProbes::GetItem ( const _variant_t & IndexVal ) {
+    struct IProbe * _result = 0;
+    HRESULT _hr = get_Item(IndexVal, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IProbePtr(_result, false);
+}
+
+IUnknownPtr IProbes::Get_NewEnum ( ) {
+    IUnknown * _result = 0;
+    HRESULT _hr = get__NewEnum(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IUnknownPtr(_result, false);
+}
+
+long IProbes::GetCount ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+IProbePtr IProbes::GetItemOfNumber ( long ProbeNumber ) {
+    struct IProbe * _result = 0;
+    HRESULT _hr = get_ItemOfNumber(ProbeNumber, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IProbePtr(_result, false);
+}
+
+HRESULT IProbes::SetProbeID ( long ProbeNumberVal, _bstr_t ProbeIDVal ) {
+    HRESULT _hr = raw_SetProbeID(ProbeNumberVal, ProbeIDVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IOutputProbes wrapper method implementations
+//
+
+IProbePtr IOutputProbes::GetItem ( const _variant_t & ProbeIndexVal ) {
+    struct IProbe * _result = 0;
+    HRESULT _hr = get_Item(ProbeIndexVal, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IProbePtr(_result, false);
+}
+
+IUnknownPtr IOutputProbes::Get_NewEnum ( ) {
+    IUnknown * _result = 0;
+    HRESULT _hr = get__NewEnum(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IUnknownPtr(_result, false);
+}
+
+long IOutputProbes::GetCount ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+HRESULT IOutputProbes::Add ( _bstr_t ProbeIDVal ) {
+    HRESULT _hr = raw_Add(ProbeIDVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+IProbePtr IOutputProbes::GetItemOfNumber ( long ProbeNumberVal ) {
+    struct IProbe * _result = 0;
+    HRESULT _hr = get_ItemOfNumber(ProbeNumberVal, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IProbePtr(_result, false);
+}
+
+HRESULT IOutputProbes::AddAll ( ) {
+    HRESULT _hr = raw_AddAll();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+IOutputProbesPtr IOutputProbes::Clone ( ) {
+    struct IOutputProbes * _result = 0;
+    HRESULT _hr = raw_Clone(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IOutputProbesPtr(_result, false);
+}
+
+HRESULT IOutputProbes::RemoveAll ( ) {
+    HRESULT _hr = raw_RemoveAll();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface IMemory wrapper method implementations
+//
+
+long IMemory::GetChannelNO ( ) {
+    long _result = 0;
+    HRESULT _hr = get_ChannelNO(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+void IMemory::PutChannelNO ( long ChannelNOVal ) {
+    HRESULT _hr = put_ChannelNO(ChannelNOVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+_bstr_t IMemory::GetChannelID ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_ChannelID(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+void IMemory::PutChannelID ( _bstr_t ChannelIDVal ) {
+    HRESULT _hr = put_ChannelID(ChannelIDVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+HRESULT IMemory::GetReferenceColor ( _bstr_t ProbeIDVal, float * XVal, float * YVal, float * LvVal ) {
+    HRESULT _hr = raw_GetReferenceColor(ProbeIDVal, XVal, YVal, LvVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+HRESULT IMemory::SetChannelID ( _bstr_t ChannelIDVal ) {
+    HRESULT _hr = raw_SetChannelID(ChannelIDVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+HRESULT IMemory::GetMemoryStatus ( long ProbeNOVal, long * CalProbeSNOVal, long * RefProbeSNOVal, long * CalModeVal ) {
+    HRESULT _hr = raw_GetMemoryStatus(ProbeNOVal, CalProbeSNOVal, RefProbeSNOVal, CalModeVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+long IMemory::CheckCalData ( long ProbeNOVal, _bstr_t FileNameVal ) {
+    long _result = 0;
+    HRESULT _hr = raw_CheckCalData(ProbeNOVal, FileNameVal, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+HRESULT IMemory::CopyToFile ( long ProbeNOVal, _bstr_t FileNameVal ) {
+    HRESULT _hr = raw_CopyToFile(ProbeNOVal, FileNameVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+HRESULT IMemory::CopyFromFile ( long ProbeNOVal, _bstr_t FileNameVal ) {
+    HRESULT _hr = raw_CopyFromFile(ProbeNOVal, FileNameVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface ICa wrapper method implementations
+//
+
+IProbesPtr ICa::GetProbes ( ) {
+    struct IProbes * _result = 0;
+    HRESULT _hr = get_Probes(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IProbesPtr(_result, false);
+}
+
+IOutputProbesPtr ICa::GetOutputProbes ( ) {
+    struct IOutputProbes * _result = 0;
+    HRESULT _hr = get_OutputProbes(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IOutputProbesPtr(_result, false);
+}
+
+IMemoryPtr ICa::GetMemory ( ) {
+    struct IMemory * _result = 0;
+    HRESULT _hr = get_Memory(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IMemoryPtr(_result, false);
+}
+
+_bstr_t ICa::GetDisplayProbe ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_DisplayProbe(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+void ICa::PutDisplayProbe ( _bstr_t DisplayProbeVal ) {
+    HRESULT _hr = put_DisplayProbe(DisplayProbeVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+IProbePtr ICa::GetSingleProbe ( ) {
+    struct IProbe * _result = 0;
+    HRESULT _hr = get_SingleProbe(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IProbePtr(_result, false);
+}
+
+float ICa::GetSyncMode ( ) {
+    float _result = 0;
+    HRESULT _hr = get_SyncMode(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+void ICa::PutSyncMode ( float SyncModeVal ) {
+    HRESULT _hr = put_SyncMode(SyncModeVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+long ICa::GetDisplayMode ( ) {
+    long _result = 0;
+    HRESULT _hr = get_DisplayMode(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+void ICa::PutDisplayMode ( long DisplayModeVal ) {
+    HRESULT _hr = put_DisplayMode(DisplayModeVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+long ICa::GetDisplayDigits ( ) {
+    long _result = 0;
+    HRESULT _hr = get_DisplayDigits(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+void ICa::PutDisplayDigits ( long DisplayDigitsVal ) {
+    HRESULT _hr = put_DisplayDigits(DisplayDigitsVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+long ICa::GetAveragingMode ( ) {
+    long _result = 0;
+    HRESULT _hr = get_AveragingMode(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+void ICa::PutAveragingMode ( long AveragingModeVal ) {
+    HRESULT _hr = put_AveragingMode(AveragingModeVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+long ICa::GetBrightnessUnit ( ) {
+    long _result = 0;
+    HRESULT _hr = get_BrightnessUnit(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+void ICa::PutBrightnessUnit ( long BrightnessUnitVal ) {
+    HRESULT _hr = put_BrightnessUnit(BrightnessUnitVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+_bstr_t ICa::GetCAType ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_CAType(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+_bstr_t ICa::GetCAVersion ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_CAVersion(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+long ICa::GetNumber ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Number(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+_bstr_t ICa::GetPortID ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_PortID(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+_bstr_t ICa::GetID ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_ID(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+void ICa::PutID ( _bstr_t CaIDVal ) {
+    HRESULT _hr = put_ID(CaIDVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+HRESULT ICa::CalZero ( ) {
+    HRESULT _hr = raw_CalZero();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+HRESULT ICa::Measure ( long newVal ) {
+    HRESULT _hr = raw_Measure(newVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+HRESULT ICa::SetAnalyzerCalMode ( ) {
+    HRESULT _hr = raw_SetAnalyzerCalMode();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+HRESULT ICa::Enter ( ) {
+    HRESULT _hr = raw_Enter();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+HRESULT ICa::SetAnalogRange ( float Range1Val, float Range2Val ) {
+    HRESULT _hr = raw_SetAnalogRange(Range1Val, Range2Val);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+HRESULT ICa::SetPWROnStatus ( ) {
+    HRESULT _hr = raw_SetPWROnStatus();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+long ICa::GetCalStandard ( ) {
+    long _result = 0;
+    HRESULT _hr = get_CalStandard(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+void ICa::PutCalStandard ( long CalStandardVal ) {
+    HRESULT _hr = put_CalStandard(CalStandardVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+HRESULT ICa::ResetAnalyzerCalMode ( ) {
+    HRESULT _hr = raw_ResetAnalyzerCalMode();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+HRESULT ICa::SetLvxyCalMode ( ) {
+    HRESULT _hr = raw_SetLvxyCalMode();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+HRESULT ICa::ResetLvxyCalMode ( ) {
+    HRESULT _hr = raw_ResetLvxyCalMode();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+HRESULT ICa::SetAnalyzerCalData ( long ColorVal ) {
+    HRESULT _hr = raw_SetAnalyzerCalData(ColorVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+HRESULT ICa::SetDisplayProbe ( long ProbeNumberVal ) {
+    HRESULT _hr = raw_SetDisplayProbe(ProbeNumberVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+HRESULT ICa::SetLvxyCalData ( long ColorVal, float XVal, float YVal, float LvVal ) {
+    HRESULT _hr = raw_SetLvxyCalData(ColorVal, XVal, YVal, LvVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+void ICa::PutRemoteMode ( long _arg1 ) {
+    HRESULT _hr = put_RemoteMode(_arg1);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+}
+
+HRESULT ICa::SetFMAAnalogRange ( float RangeVal ) {
+    HRESULT _hr = raw_SetFMAAnalogRange(RangeVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+HRESULT ICa::GetAnalogRange ( float * Range1Val, float * Range2Val ) {
+    HRESULT _hr = raw_GetAnalogRange(Range1Val, Range2Val);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+HRESULT ICa::GetFMAAnalogRange ( float * RangeVal ) {
+    HRESULT _hr = raw_GetFMAAnalogRange(RangeVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface ICas wrapper method implementations
+//
+
+ICaPtr ICas::GetItem ( const _variant_t & IndexVal ) {
+    struct ICa * _result = 0;
+    HRESULT _hr = get_Item(IndexVal, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ICaPtr(_result, false);
+}
+
+IUnknownPtr ICas::Get_NewEnum ( ) {
+    IUnknown * _result = 0;
+    HRESULT _hr = get__NewEnum(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return IUnknownPtr(_result, false);
+}
+
+long ICas::GetCount ( ) {
+    long _result = 0;
+    HRESULT _hr = get_Count(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+HRESULT ICas::SendMsr ( ) {
+    HRESULT _hr = raw_SendMsr();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+HRESULT ICas::ReceiveMsr ( ) {
+    HRESULT _hr = raw_ReceiveMsr();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+ICaPtr ICas::GetItemOfNumber ( long CaNumberVal ) {
+    struct ICa * _result = 0;
+    HRESULT _hr = get_ItemOfNumber(CaNumberVal, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ICaPtr(_result, false);
+}
+
+HRESULT ICas::SetCaID ( long CaNumberVal, _bstr_t CaIDVal ) {
+    HRESULT _hr = raw_SetCaID(CaNumberVal, CaIDVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+//
+// interface ICa200 wrapper method implementations
+//
+
+ICasPtr ICa200::GetCas ( ) {
+    struct ICas * _result = 0;
+    HRESULT _hr = get_Cas(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ICasPtr(_result, false);
+}
+
+HRESULT ICa200::SetConfiguration ( long CaNumberVal, _bstr_t ConnecStringVal, long PortVal, long BaudRateVal ) {
+    HRESULT _hr = raw_SetConfiguration(CaNumberVal, ConnecStringVal, PortVal, BaudRateVal);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+HRESULT ICa200::AutoConnect ( ) {
+    HRESULT _hr = raw_AutoConnect();
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _hr;
+}
+
+ICaPtr ICa200::GetSingleCa ( ) {
+    struct ICa * _result = 0;
+    HRESULT _hr = get_SingleCa(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return ICaPtr(_result, false);
+}
+
+//
+// dispinterface _ICaEvents wrapper method implementations
+//
+
+HRESULT _ICaEvents::ExeCalZero ( ) {
+    return _com_dispatch_method(this, 0x1, DISPATCH_METHOD, VT_EMPTY, NULL, NULL);
+}
+
+//
+// interface IProbeInfo wrapper method implementations
+//
+
+_bstr_t IProbeInfo::GetTypeName ( ) {
+    BSTR _result = 0;
+    HRESULT _hr = get_TypeName(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}
+
+long IProbeInfo::GetTypeNO ( ) {
+    long _result = 0;
+    HRESULT _hr = get_TypeNO(&_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _result;
+}
+
+//
+// interface ICaOption wrapper method implementations
+//
+
+_bstr_t ICaOption::Command ( _bstr_t CommandVal ) {
+    BSTR _result = 0;
+    HRESULT _hr = raw_Command(CommandVal, &_result);
+    if (FAILED(_hr)) _com_issue_errorex(_hr, this, __uuidof(this));
+    return _bstr_t(_result, false);
+}

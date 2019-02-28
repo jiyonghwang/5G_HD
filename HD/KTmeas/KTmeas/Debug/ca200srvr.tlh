@@ -1,0 +1,789 @@
+﻿// Created by Microsoft (R) C/C++ Compiler Version 11.00.50727.1 (7af5f67c).
+//
+// d:\sw measurement\ktmeas\ktmeas\debug\ca200srvr.tlh
+//
+// C++ source equivalent of Win32 type library Libs\CA200Srvr.dll
+// compiler-generated file created 02/13/19 at 20:48:03 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("81480671-9287-43d4-8a21-f0cb0157077f"))
+/* LIBID */ __CA200SRVRLib;
+struct /* coclass */ Ca200;
+struct __declspec(uuid("db87a8f6-faf3-433a-b7f3-31bb4d759361"))
+/* dual interface */ ICa200;
+struct __declspec(uuid("5415c7c6-d982-46ee-ba22-fb6dc1ad5de0"))
+/* dual interface */ ICas;
+struct __declspec(uuid("a930f0db-f79a-467a-8479-f8369b063b8d"))
+/* dual interface */ ICa;
+struct __declspec(uuid("b455efe8-1576-481c-bac6-a1c506bf4e81"))
+/* dual interface */ IProbes;
+struct __declspec(uuid("b2fdd51e-cba7-45ce-af0a-dd962e46b74f"))
+/* dual interface */ IProbe;
+struct __declspec(uuid("3ee4760c-b9f3-47b1-953f-f5a2f83ff688"))
+/* dual interface */ IOutputProbes;
+struct __declspec(uuid("20ea33bb-6914-465a-b98e-8dbd4e386cd0"))
+/* dual interface */ IMemory;
+struct /* coclass */ Cas;
+struct __declspec(uuid("f7663750-5900-45eb-905f-78c5d5378481"))
+/* dispinterface */ _ICaEvents;
+struct __declspec(uuid("5c542273-19d5-4c56-a12a-a58b1baad65e"))
+/* dual interface */ IProbeInfo;
+struct /* coclass */ Ca;
+struct __declspec(uuid("3cbe6157-1d53-4cae-b4b0-33acc30e6421"))
+/* dual interface */ ICaOption;
+struct /* coclass */ Memory;
+struct /* coclass */ Probes;
+struct /* coclass */ Probe;
+struct /* coclass */ OutputProbes;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(IProbe, __uuidof(IProbe));
+_COM_SMARTPTR_TYPEDEF(IProbes, __uuidof(IProbes));
+_COM_SMARTPTR_TYPEDEF(IOutputProbes, __uuidof(IOutputProbes));
+_COM_SMARTPTR_TYPEDEF(IMemory, __uuidof(IMemory));
+_COM_SMARTPTR_TYPEDEF(ICa, __uuidof(ICa));
+_COM_SMARTPTR_TYPEDEF(ICas, __uuidof(ICas));
+_COM_SMARTPTR_TYPEDEF(ICa200, __uuidof(ICa200));
+_COM_SMARTPTR_TYPEDEF(_ICaEvents, __uuidof(_ICaEvents));
+_COM_SMARTPTR_TYPEDEF(IProbeInfo, __uuidof(IProbeInfo));
+_COM_SMARTPTR_TYPEDEF(ICaOption, __uuidof(ICaOption));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("006b0650-af9a-4ee1-b18f-b5740004d7ce"))
+Ca200;
+    // [ default ] interface ICa200
+
+struct __declspec(uuid("b2fdd51e-cba7-45ce-af0a-dd962e46b74f"))
+IProbe : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetX))
+    float X;
+    __declspec(property(get=GetY))
+    float Y;
+    __declspec(property(get=GetZ))
+    float Z;
+    __declspec(property(get=GetFlckrJEITA))
+    float FlckrJEITA;
+    __declspec(property(get=GetNumber))
+    long Number;
+    __declspec(property(get=GetID,put=PutID))
+    _bstr_t ID;
+    __declspec(property(get=GetSerialNO))
+    _bstr_t SerialNO;
+    __declspec(property(get=GetLv))
+    float Lv;
+    __declspec(property(get=Getud))
+    float ud;
+    __declspec(property(get=Getvd))
+    float vd;
+    __declspec(property(get=GetT))
+    long T;
+    __declspec(property(get=GetdEUser))
+    float dEUser;
+    __declspec(property(get=GetFlckrFMA))
+    float FlckrFMA;
+    __declspec(property(get=Getsy))
+    float sy;
+    __declspec(property(get=Getsx))
+    float sx;
+    __declspec(property(get=Getduv))
+    float duv;
+    __declspec(property(get=GetusUser))
+    float usUser;
+    __declspec(property(get=GetvsUser))
+    float vsUser;
+    __declspec(property(get=GetLsUser))
+    float LsUser;
+    __declspec(property(get=GetLvfL))
+    float LvfL;
+    __declspec(property(get=GetR))
+    float R;
+    __declspec(property(get=GetG))
+    float G;
+    __declspec(property(get=GetB))
+    float B;
+    __declspec(property(get=GetRD))
+    long RD;
+    __declspec(property(get=GetRAD))
+    long RAD;
+    __declspec(property(get=GetRFMA))
+    long RFMA;
+    __declspec(property(get=GetRJEITA))
+    long RJEITA;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    float GetX ( );
+    float GetY ( );
+    float GetZ ( );
+    float GetFlckrJEITA ( );
+    long GetNumber ( );
+    _bstr_t GetID ( );
+    void PutID (
+        _bstr_t ProbeIDVal );
+    _bstr_t GetSerialNO ( );
+    float GetLv ( );
+    float Getud ( );
+    float Getvd ( );
+    long GetT ( );
+    float GetdEUser ( );
+    float GetFlckrFMA ( );
+    float Getsy ( );
+    float Getsx ( );
+    float Getduv ( );
+    float GetusUser ( );
+    float GetvsUser ( );
+    float GetLsUser ( );
+    float GetLvfL ( );
+    float GetR ( );
+    float GetG ( );
+    float GetB ( );
+    long GetRD ( );
+    long GetRAD ( );
+    long GetRFMA ( );
+    long GetRJEITA ( );
+    float GetSpectrum (
+        long Frequency );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_X (
+        /*[out,retval]*/ float * XVal ) = 0;
+      virtual HRESULT __stdcall get_Y (
+        /*[out,retval]*/ float * YVal ) = 0;
+      virtual HRESULT __stdcall get_Z (
+        /*[out,retval]*/ float * ZVal ) = 0;
+      virtual HRESULT __stdcall get_FlckrJEITA (
+        /*[out,retval]*/ float * FlckrJEITAVal ) = 0;
+      virtual HRESULT __stdcall get_Number (
+        /*[out,retval]*/ long * NumberVal ) = 0;
+      virtual HRESULT __stdcall get_ID (
+        /*[out,retval]*/ BSTR * ProbeIDVal ) = 0;
+      virtual HRESULT __stdcall put_ID (
+        /*[in]*/ BSTR ProbeIDVal ) = 0;
+      virtual HRESULT __stdcall get_SerialNO (
+        /*[out,retval]*/ BSTR * SerialNOVal ) = 0;
+      virtual HRESULT __stdcall get_Lv (
+        /*[out,retval]*/ float * LvVal ) = 0;
+      virtual HRESULT __stdcall get_ud (
+        /*[out,retval]*/ float * udVal ) = 0;
+      virtual HRESULT __stdcall get_vd (
+        /*[out,retval]*/ float * vdVal ) = 0;
+      virtual HRESULT __stdcall get_T (
+        /*[out,retval]*/ long * TVal ) = 0;
+      virtual HRESULT __stdcall get_dEUser (
+        /*[out,retval]*/ float * EUserVal ) = 0;
+      virtual HRESULT __stdcall get_FlckrFMA (
+        /*[out,retval]*/ float * FlckrFMAVal ) = 0;
+      virtual HRESULT __stdcall get_sy (
+        /*[out,retval]*/ float * syVal ) = 0;
+      virtual HRESULT __stdcall get_sx (
+        /*[out,retval]*/ float * sxVal ) = 0;
+      virtual HRESULT __stdcall get_duv (
+        /*[out,retval]*/ float * duvVal ) = 0;
+      virtual HRESULT __stdcall get_usUser (
+        /*[out,retval]*/ float * usUserVal ) = 0;
+      virtual HRESULT __stdcall get_vsUser (
+        /*[out,retval]*/ float * vsUserVal ) = 0;
+      virtual HRESULT __stdcall get_LsUser (
+        /*[out,retval]*/ float * LsUserVal ) = 0;
+      virtual HRESULT __stdcall get_LvfL (
+        /*[out,retval]*/ float * LvfLVal ) = 0;
+      virtual HRESULT __stdcall get_R (
+        /*[out,retval]*/ float * RVal ) = 0;
+      virtual HRESULT __stdcall get_G (
+        /*[out,retval]*/ float * GVal ) = 0;
+      virtual HRESULT __stdcall get_B (
+        /*[out,retval]*/ float * BVal ) = 0;
+      virtual HRESULT __stdcall get_RD (
+        /*[out,retval]*/ long * RCodeVal ) = 0;
+      virtual HRESULT __stdcall get_RAD (
+        /*[out,retval]*/ long * RCodeVal ) = 0;
+      virtual HRESULT __stdcall get_RFMA (
+        /*[out,retval]*/ long * RCodeVal ) = 0;
+      virtual HRESULT __stdcall get_RJEITA (
+        /*[out,retval]*/ long * RCodeVal ) = 0;
+      virtual HRESULT __stdcall raw_GetSpectrum (
+        /*[in]*/ long Frequency,
+        /*[out,retval]*/ float * SpectrumValue ) = 0;
+};
+
+struct __declspec(uuid("b455efe8-1576-481c-bac6-a1c506bf4e81"))
+IProbes : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetItem))
+    IProbePtr Item[];
+    __declspec(property(get=GetCount))
+    long Count;
+    __declspec(property(get=GetItemOfNumber))
+    IProbePtr ItemOfNumber[];
+    __declspec(property(get=Get_NewEnum))
+    IUnknownPtr _NewEnum;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    IProbePtr GetItem (
+        const _variant_t & IndexVal );
+    IUnknownPtr Get_NewEnum ( );
+    long GetCount ( );
+    IProbePtr GetItemOfNumber (
+        long ProbeNumber );
+    HRESULT SetProbeID (
+        long ProbeNumberVal,
+        _bstr_t ProbeIDVal );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_Item (
+        /*[in]*/ VARIANT IndexVal,
+        /*[out,retval]*/ struct IProbe * * ItemVal ) = 0;
+      virtual HRESULT __stdcall get__NewEnum (
+        /*[out,retval]*/ IUnknown * * pVal ) = 0;
+      virtual HRESULT __stdcall get_Count (
+        /*[out,retval]*/ long * CountVal ) = 0;
+      virtual HRESULT __stdcall get_ItemOfNumber (
+        /*[in]*/ long ProbeNumber,
+        /*[out,retval]*/ struct IProbe * * ProbeVal ) = 0;
+      virtual HRESULT __stdcall raw_SetProbeID (
+        /*[in]*/ long ProbeNumberVal,
+        /*[in]*/ BSTR ProbeIDVal ) = 0;
+};
+
+struct __declspec(uuid("3ee4760c-b9f3-47b1-953f-f5a2f83ff688"))
+IOutputProbes : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetItem))
+    IProbePtr Item[];
+    __declspec(property(get=GetCount))
+    long Count;
+    __declspec(property(get=GetItemOfNumber))
+    IProbePtr ItemOfNumber[];
+    __declspec(property(get=Get_NewEnum))
+    IUnknownPtr _NewEnum;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    IProbePtr GetItem (
+        const _variant_t & ProbeIndexVal );
+    IUnknownPtr Get_NewEnum ( );
+    long GetCount ( );
+    HRESULT Add (
+        _bstr_t ProbeIDVal );
+    IProbePtr GetItemOfNumber (
+        long ProbeNumberVal );
+    HRESULT AddAll ( );
+    IOutputProbesPtr Clone ( );
+    HRESULT RemoveAll ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_Item (
+        /*[in]*/ VARIANT ProbeIndexVal,
+        /*[out,retval]*/ struct IProbe * * ProbeVal ) = 0;
+      virtual HRESULT __stdcall get__NewEnum (
+        /*[out,retval]*/ IUnknown * * pVal ) = 0;
+      virtual HRESULT __stdcall get_Count (
+        /*[out,retval]*/ long * CountVal ) = 0;
+      virtual HRESULT __stdcall raw_Add (
+        /*[in]*/ BSTR ProbeIDVal ) = 0;
+      virtual HRESULT __stdcall get_ItemOfNumber (
+        /*[in]*/ long ProbeNumberVal,
+        /*[out,retval]*/ struct IProbe * * ProbeVal ) = 0;
+      virtual HRESULT __stdcall raw_AddAll ( ) = 0;
+      virtual HRESULT __stdcall raw_Clone (
+        /*[out,retval]*/ struct IOutputProbes * * CloneVal ) = 0;
+      virtual HRESULT __stdcall raw_RemoveAll ( ) = 0;
+};
+
+struct __declspec(uuid("20ea33bb-6914-465a-b98e-8dbd4e386cd0"))
+IMemory : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetChannelNO,put=PutChannelNO))
+    long ChannelNO;
+    __declspec(property(get=GetChannelID,put=PutChannelID))
+    _bstr_t ChannelID;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    long GetChannelNO ( );
+    void PutChannelNO (
+        long ChannelNOVal );
+    _bstr_t GetChannelID ( );
+    void PutChannelID (
+        _bstr_t ChannelIDVal );
+    HRESULT GetReferenceColor (
+        _bstr_t ProbeIDVal,
+        float * XVal,
+        float * YVal,
+        float * LvVal );
+    HRESULT SetChannelID (
+        _bstr_t ChannelIDVal );
+    HRESULT GetMemoryStatus (
+        long ProbeNOVal,
+        long * CalProbeSNOVal,
+        long * RefProbeSNOVal,
+        long * CalModeVal );
+    long CheckCalData (
+        long ProbeNOVal,
+        _bstr_t FileNameVal );
+    HRESULT CopyToFile (
+        long ProbeNOVal,
+        _bstr_t FileNameVal );
+    HRESULT CopyFromFile (
+        long ProbeNOVal,
+        _bstr_t FileNameVal );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_ChannelNO (
+        /*[out,retval]*/ long * ChannelNOVal ) = 0;
+      virtual HRESULT __stdcall put_ChannelNO (
+        /*[in]*/ long ChannelNOVal ) = 0;
+      virtual HRESULT __stdcall get_ChannelID (
+        /*[out,retval]*/ BSTR * ChannelIDVal ) = 0;
+      virtual HRESULT __stdcall put_ChannelID (
+        /*[in]*/ BSTR ChannelIDVal ) = 0;
+      virtual HRESULT __stdcall raw_GetReferenceColor (
+        /*[in]*/ BSTR ProbeIDVal,
+        /*[out]*/ float * XVal,
+        /*[out]*/ float * YVal,
+        /*[out]*/ float * LvVal ) = 0;
+      virtual HRESULT __stdcall raw_SetChannelID (
+        /*[in]*/ BSTR ChannelIDVal ) = 0;
+      virtual HRESULT __stdcall raw_GetMemoryStatus (
+        /*[in]*/ long ProbeNOVal,
+        /*[out]*/ long * CalProbeSNOVal,
+        /*[out]*/ long * RefProbeSNOVal,
+        /*[out]*/ long * CalModeVal ) = 0;
+      virtual HRESULT __stdcall raw_CheckCalData (
+        /*[in]*/ long ProbeNOVal,
+        /*[in]*/ BSTR FileNameVal,
+        /*[out,retval]*/ long * ResultVal ) = 0;
+      virtual HRESULT __stdcall raw_CopyToFile (
+        /*[in]*/ long ProbeNOVal,
+        /*[in]*/ BSTR FileNameVal ) = 0;
+      virtual HRESULT __stdcall raw_CopyFromFile (
+        /*[in]*/ long ProbeNOVal,
+        /*[in]*/ BSTR FileNameVal ) = 0;
+};
+
+struct __declspec(uuid("a930f0db-f79a-467a-8479-f8369b063b8d"))
+ICa : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetProbes))
+    IProbesPtr Probes;
+    __declspec(property(get=GetOutputProbes))
+    IOutputProbesPtr OutputProbes;
+    __declspec(property(get=GetMemory))
+    IMemoryPtr Memory;
+    __declspec(property(get=GetDisplayProbe,put=PutDisplayProbe))
+    _bstr_t DisplayProbe;
+    __declspec(property(get=GetSingleProbe))
+    IProbePtr SingleProbe;
+    __declspec(property(get=GetSyncMode,put=PutSyncMode))
+    float SyncMode;
+    __declspec(property(get=GetDisplayMode,put=PutDisplayMode))
+    long DisplayMode;
+    __declspec(property(get=GetDisplayDigits,put=PutDisplayDigits))
+    long DisplayDigits;
+    __declspec(property(get=GetAveragingMode,put=PutAveragingMode))
+    long AveragingMode;
+    __declspec(property(get=GetBrightnessUnit,put=PutBrightnessUnit))
+    long BrightnessUnit;
+    __declspec(property(get=GetCalStandard,put=PutCalStandard))
+    long CalStandard;
+    __declspec(property(get=GetCAType))
+    _bstr_t CAType;
+    __declspec(property(get=GetCAVersion))
+    _bstr_t CAVersion;
+    __declspec(property(get=GetNumber))
+    long Number;
+    __declspec(property(get=GetPortID))
+    _bstr_t PortID;
+    __declspec(property(get=GetID,put=PutID))
+    _bstr_t ID;
+    __declspec(property(put=PutRemoteMode))
+    long RemoteMode;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    IProbesPtr GetProbes ( );
+    IOutputProbesPtr GetOutputProbes ( );
+    IMemoryPtr GetMemory ( );
+    _bstr_t GetDisplayProbe ( );
+    void PutDisplayProbe (
+        _bstr_t DisplayProbeVal );
+    IProbePtr GetSingleProbe ( );
+    float GetSyncMode ( );
+    void PutSyncMode (
+        float SyncModeVal );
+    long GetDisplayMode ( );
+    void PutDisplayMode (
+        long DisplayModeVal );
+    long GetDisplayDigits ( );
+    void PutDisplayDigits (
+        long DisplayDigitsVal );
+    long GetAveragingMode ( );
+    void PutAveragingMode (
+        long AveragingModeVal );
+    long GetBrightnessUnit ( );
+    void PutBrightnessUnit (
+        long BrightnessUnitVal );
+    _bstr_t GetCAType ( );
+    _bstr_t GetCAVersion ( );
+    long GetNumber ( );
+    _bstr_t GetPortID ( );
+    _bstr_t GetID ( );
+    void PutID (
+        _bstr_t CaIDVal );
+    HRESULT CalZero ( );
+    HRESULT Measure (
+        long newVal );
+    HRESULT SetAnalyzerCalMode ( );
+    HRESULT Enter ( );
+    HRESULT SetAnalogRange (
+        float Range1Val,
+        float Range2Val );
+    HRESULT SetPWROnStatus ( );
+    long GetCalStandard ( );
+    void PutCalStandard (
+        long CalStandardVal );
+    HRESULT ResetAnalyzerCalMode ( );
+    HRESULT SetLvxyCalMode ( );
+    HRESULT ResetLvxyCalMode ( );
+    HRESULT SetAnalyzerCalData (
+        long ColorVal );
+    HRESULT SetDisplayProbe (
+        long ProbeNumberVal );
+    HRESULT SetLvxyCalData (
+        long ColorVal,
+        float XVal,
+        float YVal,
+        float LvVal );
+    void PutRemoteMode (
+        long _arg1 );
+    HRESULT SetFMAAnalogRange (
+        float RangeVal );
+    HRESULT GetAnalogRange (
+        float * Range1Val,
+        float * Range2Val );
+    HRESULT GetFMAAnalogRange (
+        float * RangeVal );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_Probes (
+        /*[out,retval]*/ struct IProbes * * ProbesVal ) = 0;
+      virtual HRESULT __stdcall get_OutputProbes (
+        /*[out,retval]*/ struct IOutputProbes * * OutputProbesVal ) = 0;
+      virtual HRESULT __stdcall get_Memory (
+        /*[out,retval]*/ struct IMemory * * MemoryVal ) = 0;
+      virtual HRESULT __stdcall get_DisplayProbe (
+        /*[out,retval]*/ BSTR * DisplayProbeVal ) = 0;
+      virtual HRESULT __stdcall put_DisplayProbe (
+        /*[in]*/ BSTR DisplayProbeVal ) = 0;
+      virtual HRESULT __stdcall get_SingleProbe (
+        /*[out,retval]*/ struct IProbe * * SingleProbeVal ) = 0;
+      virtual HRESULT __stdcall get_SyncMode (
+        /*[out,retval]*/ float * SyncModeVal ) = 0;
+      virtual HRESULT __stdcall put_SyncMode (
+        /*[in]*/ float SyncModeVal ) = 0;
+      virtual HRESULT __stdcall get_DisplayMode (
+        /*[out,retval]*/ long * DisplayModeVal ) = 0;
+      virtual HRESULT __stdcall put_DisplayMode (
+        /*[in]*/ long DisplayModeVal ) = 0;
+      virtual HRESULT __stdcall get_DisplayDigits (
+        /*[out,retval]*/ long * DisplayDigitsVal ) = 0;
+      virtual HRESULT __stdcall put_DisplayDigits (
+        /*[in]*/ long DisplayDigitsVal ) = 0;
+      virtual HRESULT __stdcall get_AveragingMode (
+        /*[out,retval]*/ long * AveragingModeVal ) = 0;
+      virtual HRESULT __stdcall put_AveragingMode (
+        /*[in]*/ long AveragingModeVal ) = 0;
+      virtual HRESULT __stdcall get_BrightnessUnit (
+        /*[out,retval]*/ long * BrightnessUnitVal ) = 0;
+      virtual HRESULT __stdcall put_BrightnessUnit (
+        /*[in]*/ long BrightnessUnitVal ) = 0;
+      virtual HRESULT __stdcall get_CAType (
+        /*[out,retval]*/ BSTR * CATypeVal ) = 0;
+      virtual HRESULT __stdcall get_CAVersion (
+        /*[out,retval]*/ BSTR * CAVersionVal ) = 0;
+      virtual HRESULT __stdcall get_Number (
+        /*[out,retval]*/ long * NumberVal ) = 0;
+      virtual HRESULT __stdcall get_PortID (
+        /*[out,retval]*/ BSTR * PortIDVal ) = 0;
+      virtual HRESULT __stdcall get_ID (
+        /*[out,retval]*/ BSTR * CaIDVal ) = 0;
+      virtual HRESULT __stdcall put_ID (
+        /*[in]*/ BSTR CaIDVal ) = 0;
+      virtual HRESULT __stdcall raw_CalZero ( ) = 0;
+      virtual HRESULT __stdcall raw_Measure (
+        /*[in]*/ long newVal ) = 0;
+      virtual HRESULT __stdcall raw_SetAnalyzerCalMode ( ) = 0;
+      virtual HRESULT __stdcall raw_Enter ( ) = 0;
+      virtual HRESULT __stdcall raw_SetAnalogRange (
+        /*[in]*/ float Range1Val,
+        /*[in]*/ float Range2Val ) = 0;
+      virtual HRESULT __stdcall raw_SetPWROnStatus ( ) = 0;
+      virtual HRESULT __stdcall get_CalStandard (
+        /*[out,retval]*/ long * CalStandardVal ) = 0;
+      virtual HRESULT __stdcall put_CalStandard (
+        /*[in]*/ long CalStandardVal ) = 0;
+      virtual HRESULT __stdcall raw_ResetAnalyzerCalMode ( ) = 0;
+      virtual HRESULT __stdcall raw_SetLvxyCalMode ( ) = 0;
+      virtual HRESULT __stdcall raw_ResetLvxyCalMode ( ) = 0;
+      virtual HRESULT __stdcall raw_SetAnalyzerCalData (
+        long ColorVal ) = 0;
+      virtual HRESULT __stdcall raw_SetDisplayProbe (
+        long ProbeNumberVal ) = 0;
+      virtual HRESULT __stdcall raw_SetLvxyCalData (
+        long ColorVal,
+        float XVal,
+        float YVal,
+        float LvVal ) = 0;
+      virtual HRESULT __stdcall put_RemoteMode (
+        /*[in]*/ long _arg1 ) = 0;
+      virtual HRESULT __stdcall raw_SetFMAAnalogRange (
+        /*[in]*/ float RangeVal ) = 0;
+      virtual HRESULT __stdcall raw_GetAnalogRange (
+        /*[out]*/ float * Range1Val,
+        /*[out]*/ float * Range2Val ) = 0;
+      virtual HRESULT __stdcall raw_GetFMAAnalogRange (
+        /*[out]*/ float * RangeVal ) = 0;
+};
+
+struct __declspec(uuid("5415c7c6-d982-46ee-ba22-fb6dc1ad5de0"))
+ICas : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetItem))
+    ICaPtr Item[];
+    __declspec(property(get=GetCount))
+    long Count;
+    __declspec(property(get=GetItemOfNumber))
+    ICaPtr ItemOfNumber[];
+    __declspec(property(get=Get_NewEnum))
+    IUnknownPtr _NewEnum;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    ICaPtr GetItem (
+        const _variant_t & IndexVal );
+    IUnknownPtr Get_NewEnum ( );
+    long GetCount ( );
+    HRESULT SendMsr ( );
+    HRESULT ReceiveMsr ( );
+    ICaPtr GetItemOfNumber (
+        long CaNumberVal );
+    HRESULT SetCaID (
+        long CaNumberVal,
+        _bstr_t CaIDVal );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_Item (
+        /*[in]*/ VARIANT IndexVal,
+        /*[out,retval]*/ struct ICa * * CaVal ) = 0;
+      virtual HRESULT __stdcall get__NewEnum (
+        /*[out,retval]*/ IUnknown * * pVal ) = 0;
+      virtual HRESULT __stdcall get_Count (
+        /*[out,retval]*/ long * CountVal ) = 0;
+      virtual HRESULT __stdcall raw_SendMsr ( ) = 0;
+      virtual HRESULT __stdcall raw_ReceiveMsr ( ) = 0;
+      virtual HRESULT __stdcall get_ItemOfNumber (
+        /*[in]*/ long CaNumberVal,
+        /*[out,retval]*/ struct ICa * * CaVal ) = 0;
+      virtual HRESULT __stdcall raw_SetCaID (
+        /*[in]*/ long CaNumberVal,
+        /*[in]*/ BSTR CaIDVal ) = 0;
+};
+
+struct __declspec(uuid("db87a8f6-faf3-433a-b7f3-31bb4d759361"))
+ICa200 : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetCas))
+    ICasPtr Cas;
+    __declspec(property(get=GetSingleCa))
+    ICaPtr SingleCa;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    ICasPtr GetCas ( );
+    HRESULT SetConfiguration (
+        long CaNumberVal,
+        _bstr_t ConnecStringVal,
+        long PortVal,
+        long BaudRateVal );
+    HRESULT AutoConnect ( );
+    ICaPtr GetSingleCa ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_Cas (
+        /*[out,retval]*/ struct ICas * * CasVal ) = 0;
+      virtual HRESULT __stdcall raw_SetConfiguration (
+        /*[in]*/ long CaNumberVal,
+        /*[in]*/ BSTR ConnecStringVal,
+        /*[in]*/ long PortVal,
+        /*[in]*/ long BaudRateVal ) = 0;
+      virtual HRESULT __stdcall raw_AutoConnect ( ) = 0;
+      virtual HRESULT __stdcall get_SingleCa (
+        /*[out,retval]*/ struct ICa * * SingleCaVal ) = 0;
+};
+
+struct __declspec(uuid("c1f0b433-1841-4330-960e-db7403635db3"))
+Cas;
+    // [ default ] interface ICas
+
+struct __declspec(uuid("f7663750-5900-45eb-905f-78c5d5378481"))
+_ICaEvents : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    HRESULT ExeCalZero ( );
+};
+
+struct __declspec(uuid("5c542273-19d5-4c56-a12a-a58b1baad65e"))
+IProbeInfo : IDispatch
+{
+    //
+    // Property data
+    //
+
+    __declspec(property(get=GetTypeName))
+    _bstr_t TypeName;
+    __declspec(property(get=GetTypeNO))
+    long TypeNO;
+
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _bstr_t GetTypeName ( );
+    long GetTypeNO ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall get_TypeName (
+        /*[out,retval]*/ BSTR * pVal ) = 0;
+      virtual HRESULT __stdcall get_TypeNO (
+        /*[out,retval]*/ long * pVal ) = 0;
+};
+
+struct __declspec(uuid("3b5f9680-00a6-469b-bade-04c781aafaa1"))
+Ca;
+    // [ default ] interface ICa
+    // [ default, source ] dispinterface _ICaEvents
+    // interface ICaOption
+
+struct __declspec(uuid("3cbe6157-1d53-4cae-b4b0-33acc30e6421"))
+ICaOption : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    _bstr_t Command (
+        _bstr_t CommandVal );
+
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall raw_Command (
+        /*[in]*/ BSTR CommandVal,
+        /*[out,retval]*/ BSTR * ResponseVal ) = 0;
+};
+
+struct __declspec(uuid("0c0a2e9b-efa3-4b95-ac32-98b8506f95ef"))
+Memory;
+    // [ default ] interface IMemory
+
+struct __declspec(uuid("bfa8834e-4853-4d35-98fc-baf5906daa83"))
+Probes;
+    // [ default ] interface IProbes
+
+struct __declspec(uuid("a1874391-65ba-402a-a0f8-ae9f9a11eb8b"))
+Probe;
+    // [ default ] interface IProbe
+    // interface IProbeInfo
+
+struct __declspec(uuid("df97b9a4-49ff-44cc-a5b8-06d7c6fbc9b6"))
+OutputProbes;
+    // [ default ] interface IOutputProbes
+
+#pragma pack(pop)
