@@ -1,4 +1,4 @@
-# ca_kt v1.4 CA_KT final
+# ca_kt v2.0 CA_KT final
 
 import time
 import csv
@@ -180,6 +180,22 @@ class KT():
             # print(meas2[67:88]) #ReadingNumber
             #print([words_sub_value, words_sub_units])
             return [words_f_value, words_sum_units]
+        elif command == 3:
+            meas3 = self.get_response(ser, ':READ?')  # initiate + FETCh
+            # print(type(meas3)) #type confirm
+            print(meas3)  # full meas          #D/S 353 page
+            value = meas3[0:26]
+            words_value = value.split()
+            words_sum_value = "".join(words_value)
+            words_f_value = float(words_sum_value)
+            units = meas3[24:26]
+            words_units = units.split()
+            words_sum_units = "".join(words_units)
+            # print(meas1[0:30]) #value
+            # print(meas1[30:36]) #Units : VDC(DC Volts) VAC(AC Volts) ADC(DC Current) AAC(AC Current)
+            # print(meas1[37:64]) #Timestamp
+            # print(meas1[67:88]) #ReadingNumber
+            return [words_f_value, words_sum_units]
         else:
             print("Unknown measure setting!")
             return None
@@ -194,7 +210,8 @@ class KT():
         else:
             print("Port is closed...")
 
-    def set_system_key(self, ser, system_key):           # D/S 355 page
+    def set_system_key(self, ser, system_key):    # D/S 355 page
+        #keithley2700
         if system_key == 'DCV':
             ser.write(':SYSTem:KEY 2' + '\r')
         elif system_key == 'ACV':
@@ -219,12 +236,34 @@ class KT():
             ser.write(':SYSTem:KEY 12' + '\r')
         elif system_key == 'RATE':
             ser.write(':SYSTem:KEY 31' + '\r')
+
+        else:
+            print("Unknown sensor setting!")
+            return None
+
+    def set_system_key_24(self, ser, system_key):  # D/S 415 page
+        if system_key == 'RANGEUP':
+            ser.write(':SYSTem:KEY 1' + '\r')
+        elif system_key == 'RANGEDOWN':
+            ser.write(':SYSTem:KEY 17' + '\r')
+        elif system_key == 'AUTO':
+            ser.write(':SYSTem:KEY 9' + '\r')
+        elif system_key == 'RATE':
+            ser.write(':SYSTem:KEY 7' + '\r')
+        elif system_key == 'ON':
+            ser.write(':OUTP ON' + '\r')
+        elif system_key == 'OFF':
+            ser.write(':OUTP OFF' + '\r')
+        elif system_key == 'V':
+            ser.write(':SYSTem:KEY 15' + '\r')
+        elif system_key == 'C':
+            ser.write(':SYSTem:KEY 22' + '\r')
         else:
             print("Unknown sensor setting!")
             return None
 
 class HD():
-    def time_run(self,delay, repeat, mode = None): #mode 0:CA 1:KT 2:CA_KT
+    def time_run(self, delay, repeat, mode = None): #mode 0:CA 1:KT 2:CA_KT
 
         if mode == 0:
             oc = OC()
@@ -247,10 +286,12 @@ class HD():
             wr.writerow(["repeat", "Date", "Time", "x", "y", "lv", "value", "units"])
 
         if mode != 0:
-            VI = KT().measure(serk, 2)
+            VI = KT().measure(serk, 3)
             if VI[1] != 'ADC':             #signal miss overlap just PC com #DCI:current(ADC) DCV:voltage(VDC)
                 KT().set_system_key(serk, 'DCI')
                 KT().measure(serk, 2)
+            else:
+                KT().measure(serk, 3)
 
         print('stability_Start')
 
