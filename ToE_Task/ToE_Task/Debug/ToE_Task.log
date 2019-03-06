@@ -1,0 +1,33 @@
+﻿빌드 시작: 2019-03-06 오후 7:21:14
+     1>2 노드의 "c:\Users\KOG\documents\visual studio 2012\Projects\ToE_Task\ToE_Task\ToE_Task.vcxproj" 프로젝트(Build 대상)입니다.
+     1>InitializeBuildStatus:
+         "AlwaysCreate"이(가) 지정되었기 때문에 "Debug\ToE_Task.unsuccessfulbuild"을(를) 만들고 있습니다.
+       ClCompile:
+         모든 출력이 최신 상태입니다.
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\ToE_Task.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt TabLog.cpp TabMain.cpp TabSettings.cpp ToE_Task.cpp ToE_TaskDlg.cpp
+         TabLog.cpp
+         코드를 생성하고 있습니다...
+         건너뛰고 있습니다... (관련된 변경 내용 없음)
+         ToE_TaskDlg.cpp
+         ToE_Task.cpp
+         TabSettings.cpp
+         TabMain.cpp
+       ResourceCompile:
+         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\rc.exe /D _DEBUG /l"0x0412" /IDebug\ /nologo /fo"Debug\ToE_Task.res" ToE_Task.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"c:\users\kog\documents\visual studio 2012\Projects\ToE_Task\Debug\ToE_Task.exe" /INCREMENTAL /NOLOGO /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\Manifest\dpiaware.manifest" /DEBUG /PDB:"c:\users\kog\documents\visual studio 2012\Projects\ToE_Task\Debug\ToE_Task.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"c:\users\kog\documents\visual studio 2012\Projects\ToE_Task\Debug\ToE_Task.lib" /MACHINE:X86 Debug\ToE_Task.res
+         Debug\stdafx.obj
+         Debug\TabLog.obj
+         Debug\TabMain.obj
+         Debug\TabSettings.obj
+         Debug\ToE_Task.obj
+         Debug\ToE_TaskDlg.obj
+         ToE_Task.vcxproj -> c:\users\kog\documents\visual studio 2012\Projects\ToE_Task\Debug\ToE_Task.exe
+       FinalizeBuildStatus:
+         "Debug\ToE_Task.unsuccessfulbuild" 파일을 삭제하고 있습니다.
+         "Debug\ToE_Task.lastbuildstate"에 연결(touching)하고 있습니다.
+     1>"c:\Users\KOG\documents\visual studio 2012\Projects\ToE_Task\ToE_Task\ToE_Task.vcxproj" 프로젝트를 빌드했습니다(Build 대상).
+
+빌드했습니다.
+
+경과 시간: 00:00:00.61
