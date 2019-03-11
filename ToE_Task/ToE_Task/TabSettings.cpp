@@ -24,6 +24,7 @@ CTabSettings::~CTabSettings()
 void CTabSettings::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Control(pDX, IDC_EDIT_PATH, m_pathfile);
 }
 
 
@@ -42,6 +43,10 @@ BOOL CTabSettings::OnInitDialog()
 
 	// TODO:  여기에 추가 초기화 작업을 추가합니다.
 
+	//m_strFilePath.SetWindowText(_T("D:\\HJY\\SW\\KTmeas\\KTmeas\\Time_meas_CA310.csv"));
+	m_strFilePath = "D:\\HJY\\SW\\KTmeas\\KTmeas\\Time_meas_CA310.csv";
+	SetDlgItemText(IDC_EDIT_PATH, m_strFilePath);
+	UpdateData(FALSE);
 	return TRUE;  // return TRUE unless you set the focus to a control
 	// 예외: OCX 속성 페이지는 FALSE를 반환해야 합니다.
 }
@@ -57,19 +62,17 @@ void CTabSettings::OnBnClickedBnFileOpen()
 
 	int iRet = fDlg.DoModal();
 	m_strFilePath = fDlg.GetPathName();
-
+	
 	if(iRet == IDOK)
 	{
 		SetDlgItemText(IDC_EDIT_PATH, m_strFilePath);  //edit 에 파일경로 확인
-
-
 	}
 }
 
 void CTabSettings::OnBnClickedBnPathOpen()
 {
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
-	ShellExecute(NULL, "open", m_strFilePath, NULL, NULL, SW_SHOW);
+	ShellExecute(NULL, "open", m_strFilePath, NULL, NULL, SW_SHOW); //edit에 적혀있는 파일 실행
 }
 
 void CTabSettings::OnEnChangeEdit1()

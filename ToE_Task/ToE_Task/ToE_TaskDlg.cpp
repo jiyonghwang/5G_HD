@@ -139,6 +139,8 @@ BOOL CToE_TaskDlg::OnInitDialog()
 	pDlgLog -> MoveWindow(0, 25, rect.Width(), rect.Height());
 	pDlgLog -> ShowWindow(SW_HIDE);
 
+
+
 	return TRUE;  // 포커스를 컨트롤에 설정하지 않으면 TRUE를 반환합니다.
 }
 

@@ -1,20 +1,13 @@
-﻿빌드 시작: 2019-03-11 오후 4:50:45
+﻿빌드 시작: 2019-03-11 오후 5:30:50
      1>2 노드의 "D:\HJY\5G_HD\ToE_Task\ToE_Task\ToE_Task.vcxproj" 프로젝트(Build 대상)입니다.
      1>InitializeBuildStatus:
          "AlwaysCreate"이(가) 지정되었기 때문에 "Debug\ToE_Task.unsuccessfulbuild"을(를) 만들고 있습니다.
        ClCompile:
          모든 출력이 최신 상태입니다.
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt TabLog.cpp TabMain.cpp TabSettings.cpp ToE_Task.cpp ToE_TaskDlg.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt TabSettings.cpp
          TabSettings.cpp
-         코드를 생성하고 있습니다...
-         컴파일하고 있습니다...
-         ToE_TaskDlg.cpp
-         ToE_Task.cpp
-         TabMain.cpp
-         TabLog.cpp
-         코드를 생성하고 있습니다...
        ResourceCompile:
-         C:\Program Files (x86)\Windows Kits\8.0\bin\x86\rc.exe /D _DEBUG /l"0x0412" /IDebug\ /nologo /fo"Debug\ToE_Task.res" ToE_Task.rc 
+         모든 출력이 최신 상태입니다.
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\HJY\5G_HD\ToE_Task\Debug\ToE_Task.exe" /INCREMENTAL /NOLOGO /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\Manifest\dpiaware.manifest" /DEBUG /PDB:"D:\HJY\5G_HD\ToE_Task\Debug\ToE_Task.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\HJY\5G_HD\ToE_Task\Debug\ToE_Task.lib" /MACHINE:X86 Debug\ToE_Task.res
          Debug\stdafx.obj
@@ -31,4 +24,4 @@
 
 빌드했습니다.
 
-경과 시간: 00:00:09.72
+경과 시간: 00:00:03.14

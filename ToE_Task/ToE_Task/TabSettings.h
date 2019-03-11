@@ -1,4 +1,5 @@
 #pragma once
+#include "afxwin.h"
 
 
 // CTabSettings 대화 상자입니다.
@@ -26,4 +27,5 @@ public:
 	CString m_strFilePath;
 	afx_msg void OnFileList2();
 	afx_msg void OnBnClickedBnPathOpen();
+	CEdit m_pathfile;
 };
