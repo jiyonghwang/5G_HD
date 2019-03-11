@@ -32,4 +32,8 @@ public:
 	CEdit m_autotune;
 	afx_msg void OnEnChangeEditSelfCheck();
 	afx_msg void OnEnChangeEditInit();
+	CButton m_mainstart;
+	BOOL m_mainstart1;
+	afx_msg void Wait(DWORD dwMillisecond);
+	afx_msg void OnEnChangeEditItoTest();
 };

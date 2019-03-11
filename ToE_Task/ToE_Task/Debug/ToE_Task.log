@@ -1,25 +1,28 @@
-﻿빌드 시작: 2019-03-08 오전 10:22:36
+﻿빌드 시작: 2019-03-11 오전 10:21:59
      1>2 노드의 "D:\HJY\5G_HD\ToE_Task\ToE_Task\ToE_Task.vcxproj" 프로젝트(Build 대상)입니다.
      1>InitializeBuildStatus:
          "Debug\ToE_Task.unsuccessfulbuild"에 연결(touching)하고 있습니다.
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\ToE_Task.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
-         stdafx.cpp
-     1>cl : 명령줄 warning D9028: 최소 다시 빌드에 실패했습니다. 정상 빌드로 되돌립니다.
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\ToE_Task.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt TabLog.cpp TabMain.cpp TabSettings.cpp ToE_Task.cpp ToE_TaskDlg.cpp
-         ToE_TaskDlg.cpp
-     1>d:\hjy\5g_hd\toe_task\toe_task\toe_taskdlg.cpp(5): fatal error C1033: 'd:\hjy\5g_hd\toe_task\toe_task\debug\vc110.idb' 프로그램 데이터베이스를 열 수 없습니다.
-         ToE_Task.cpp
-     1>d:\hjy\5g_hd\toe_task\toe_task\toe_task.cpp(5): fatal error C1033: 'd:\hjy\5g_hd\toe_task\toe_task\debug\vc110.idb' 프로그램 데이터베이스를 열 수 없습니다.
-         TabSettings.cpp
-     1>d:\hjy\5g_hd\toe_task\toe_task\tabsettings.cpp(4): fatal error C1033: 'd:\hjy\5g_hd\toe_task\toe_task\debug\vc110.pdb' 프로그램 데이터베이스를 열 수 없습니다.
+         모든 출력이 최신 상태입니다.
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\ToE_Task.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt TabMain.cpp
          TabMain.cpp
-     1>d:\hjy\5g_hd\toe_task\toe_task\tabmain.cpp(1): fatal error C1033: 'd:\hjy\5g_hd\toe_task\toe_task\debug\vc110.pdb' 프로그램 데이터베이스를 열 수 없습니다.
-         TabLog.cpp
-     1>d:\hjy\5g_hd\toe_task\toe_task\tablog.cpp(4): fatal error C1033: 'd:\hjy\5g_hd\toe_task\toe_task\debug\vc110.pdb' 프로그램 데이터베이스를 열 수 없습니다.
-         코드를 생성하고 있습니다...
-     1>"D:\HJY\5G_HD\ToE_Task\ToE_Task\ToE_Task.vcxproj" 프로젝트를 빌드했습니다(Build 대상). - 실패
+     1>cl : 명령줄 warning D9028: 최소 다시 빌드에 실패했습니다. 정상 빌드로 되돌립니다.
+       ResourceCompile:
+         모든 출력이 최신 상태입니다.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\HJY\5G_HD\ToE_Task\Debug\ToE_Task.exe" /INCREMENTAL /NOLOGO /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\Manifest\dpiaware.manifest" /DEBUG /PDB:"D:\HJY\5G_HD\ToE_Task\Debug\ToE_Task.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\HJY\5G_HD\ToE_Task\Debug\ToE_Task.lib" /MACHINE:X86 Debug\ToE_Task.res
+         Debug\stdafx.obj
+         Debug\TabLog.obj
+         Debug\TabMain.obj
+         Debug\TabSettings.obj
+         Debug\ToE_Task.obj
+         Debug\ToE_TaskDlg.obj
+         ToE_Task.vcxproj -> D:\HJY\5G_HD\ToE_Task\Debug\ToE_Task.exe
+       FinalizeBuildStatus:
+         "Debug\ToE_Task.unsuccessfulbuild" 파일을 삭제하고 있습니다.
+         "Debug\ToE_Task.lastbuildstate"에 연결(touching)하고 있습니다.
+     1>"D:\HJY\5G_HD\ToE_Task\ToE_Task\ToE_Task.vcxproj" 프로젝트를 빌드했습니다(Build 대상).
 
-빌드하지 못했습니다.
+빌드했습니다.
 
-경과 시간: 00:00:03.03
+경과 시간: 00:00:00.44
