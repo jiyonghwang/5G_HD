@@ -31,6 +31,10 @@ public:
 // 구현입니다.
 protected:
 	DECLARE_MESSAGE_MAP()
+public:
+	afx_msg void OnMenuSelect(UINT nItemID, UINT nFlags, HMENU hSysMenu);
+	afx_msg void OnFileListMain();
+	afx_msg void OnBnClickedOk();
 };
 
 CAboutDlg::CAboutDlg() : CDialogEx(CAboutDlg::IDD)
@@ -43,6 +47,8 @@ void CAboutDlg::DoDataExchange(CDataExchange* pDX)
 }
 
 BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)
+	ON_WM_MENUSELECT()
+	ON_BN_CLICKED(IDOK, &CAboutDlg::OnBnClickedOk)
 END_MESSAGE_MAP()
 
 
@@ -67,6 +73,9 @@ BEGIN_MESSAGE_MAP(CToE_TaskDlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
 	ON_NOTIFY(TCN_SELCHANGE, IDC_TAB1, &CToE_TaskDlg::OnTcnSelchangeTab1)
+	ON_COMMAND(ID_FILE_LIST1, &CToE_TaskDlg::OnFileListMain)
+	ON_COMMAND(ID_FILE_LIST2, &CToE_TaskDlg::OnFileListSettings)
+	ON_COMMAND(ID_FILE_LIST3, &CToE_TaskDlg::OnFileListLog)
 END_MESSAGE_MAP()
 
 
@@ -211,4 +220,45 @@ void CToE_TaskDlg::OnTcnSelchangeTab1(NMHDR *pNMHDR, LRESULT *pResult)
 			break;
 	}
 	*pResult = 0;
+}
+
+
+void CAboutDlg::OnMenuSelect(UINT nItemID, UINT nFlags, HMENU hSysMenu)
+{
+	CDialogEx::OnMenuSelect(nItemID, nFlags, hSysMenu);
+
+}
+
+void CToE_TaskDlg::OnFileListMain()
+{
+	// TODO: 여기에 명령 처리기 코드를 추가합니다.
+	pDlgMain ->ShowWindow(SW_SHOW);
+	pDlgSettings ->ShowWindow(SW_HIDE);
+	pDlgLog ->ShowWindow(SW_HIDE);
+
+}
+
+
+void CToE_TaskDlg::OnFileListSettings()
+{
+	// TODO: 여기에 명령 처리기 코드를 추가합니다.
+	pDlgMain ->ShowWindow(SW_HIDE);
+	pDlgSettings ->ShowWindow(SW_SHOW);
+	pDlgLog ->ShowWindow(SW_HIDE);
+}
+
+
+void CToE_TaskDlg::OnFileListLog()
+{
+	// TODO: 여기에 명령 처리기 코드를 추가합니다.
+	pDlgMain ->ShowWindow(SW_HIDE);
+	pDlgSettings ->ShowWindow(SW_HIDE);
+	pDlgLog ->ShowWindow(SW_SHOW);
+}
+
+
+void CAboutDlg::OnBnClickedOk()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	CDialogEx::OnOK();
 }

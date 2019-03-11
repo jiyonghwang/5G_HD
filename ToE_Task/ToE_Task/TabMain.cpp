@@ -35,7 +35,7 @@ BEGIN_MESSAGE_MAP(CTabMain, CDialogEx)
 	ON_BN_CLICKED(IDC_BN_START, &CTabMain::OnBnClickedBnStart)
 	ON_EN_CHANGE(IDC_EDIT_SELF_CHECK, &CTabMain::OnEnChangeEditSelfCheck)
 	ON_EN_CHANGE(IDC_EDIT_INIT, &CTabMain::OnEnChangeEditInit)
-	ON_EN_CHANGE(IDC_EDIT_ITO_TEST, &CTabMain::OnEnChangeEditItoTest)
+	ON_EN_CHANGE(IDC_EDIT_ITO_TEST, &CTabMain::OnEnChangeEditItoTest) 
 END_MESSAGE_MAP()
 
 
@@ -159,3 +159,4 @@ void CTabMain::OnEnChangeEditItoTest()
 
 	// TODO:  여기에 컨트롤 알림 처리기 코드를 추가합니다.
 }
+

@@ -41,4 +41,7 @@ protected:
 public:
 	CTabCtrl m_Tab;
 	afx_msg void OnTcnSelchangeTab1(NMHDR *pNMHDR, LRESULT *pResult);
+	afx_msg void OnFileListMain();
+	afx_msg void OnFileListSettings();
+	afx_msg void OnFileListLog();
 };

@@ -36,4 +36,5 @@ public:
 	BOOL m_mainstart1;
 	afx_msg void Wait(DWORD dwMillisecond);
 	afx_msg void OnEnChangeEditItoTest();
+
 };
