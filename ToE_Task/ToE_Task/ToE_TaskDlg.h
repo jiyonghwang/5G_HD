@@ -44,4 +44,5 @@ public:
 	afx_msg void OnFileListMain();
 	afx_msg void OnFileListSettings();
 	afx_msg void OnFileListLog();
+
 };

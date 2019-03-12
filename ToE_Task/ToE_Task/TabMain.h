@@ -1,7 +1,7 @@
 
 #pragma once
 #include "afxwin.h"
-
+#include "afxcmn.h"
 
 // TabMain 대화 상자입니다.
 
@@ -13,6 +13,7 @@ public:
 	CTabMain(CWnd* pParent = NULL);   // 표준 생성자입니다.
 	virtual ~CTabMain();
 
+
 // 대화 상자 데이터입니다.
 	enum { IDD = IDD_Main };
 
@@ -21,6 +22,7 @@ protected:
 
 	DECLARE_MESSAGE_MAP()
 public:
+
 	virtual BOOL OnInitDialog();
 	afx_msg void OnBnClickedBnStart();
 	afx_msg void OnEnChangeEdit1();
@@ -37,4 +39,7 @@ public:
 	afx_msg void Wait(DWORD dwMillisecond);
 	afx_msg void OnEnChangeEditItoTest();
 
+	afx_msg void OnLvnItemchangedListLog2(NMHDR *pNMHDR, LRESULT *pResult);
+	CListCtrl m_ListCtrl2;
+	void Log(CString strLog2);
 };

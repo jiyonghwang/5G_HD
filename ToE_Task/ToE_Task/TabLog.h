@@ -1,4 +1,5 @@
 #pragma once
+#include "afxcmn.h"
 
 
 // CTabLog 대화 상자입니다.
@@ -18,4 +19,9 @@ protected:
 	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 지원입니다.
 
 	DECLARE_MESSAGE_MAP()
+public:
+	virtual BOOL OnInitDialog();
+	afx_msg void OnLvnItemchangedListLog(NMHDR *pNMHDR, LRESULT *pResult);
+	CListCtrl m_ListCtrl;
+	void Log(CString strLog2);
 };
