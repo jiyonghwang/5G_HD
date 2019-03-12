@@ -8,7 +8,7 @@
 #include <sys/timeb.h>
 #include "afxcmn.h"
 #include "Libs\GridCtrl\GridCtrl.h"
-#include "d:\sw measurement\ktmeas\ktmeas\libs\gridctrl\gridctrl.h"
+#include "D:\HJY\5G_HD\KTmeas\KTmeas\Libs\GridCtrl\gridctrl.h"
 #include "OpticalComp.h"
 
 
@@ -102,4 +102,11 @@ public:
 	afx_msg void OnBnClickedRadioCakt();
 
 	afx_msg void OnBnClickedButtonCsv();
+
+	CListCtrl m_ListCtrl;
+	afx_msg void OnLvnItemchangedListctrl(NMHDR *pNMHDR, LRESULT *pResult);
+	//afx_msg void OnBnClickedListctrlAdd();
+	afx_msg void OnBnClickedListctrlDel();
+	afx_msg void OnEnChangeListctrlEdit();
+	void Log(CString strLog2);
 };

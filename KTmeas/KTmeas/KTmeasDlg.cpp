@@ -78,6 +78,7 @@ void CKTmeasDlg::DoDataExchange(CDataExchange* pDX)
 	//  DDX_Radio(pDX, IDC_RADIO_CA, m_Mode);
 	//  DDX_Radio(pDX, IDC_RADIO_CA, m_Mode);
 	DDX_Radio(pDX, IDC_RADIO_CA, m_Mode);
+	DDX_Control(pDX, IDC_LISTCTRL, m_ListCtrl);
 }
 
 BEGIN_MESSAGE_MAP(CKTmeasDlg, CDialogEx)
@@ -101,6 +102,10 @@ BEGIN_MESSAGE_MAP(CKTmeasDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_RADIO_KT, &CKTmeasDlg::OnBnClickedRadioKt)
 	ON_BN_CLICKED(IDC_RADIO_CAKT, &CKTmeasDlg::OnBnClickedRadioCakt)
 	ON_BN_CLICKED(IDC_BUTTON_CSV, &CKTmeasDlg::OnBnClickedButtonCsv)
+	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LISTCTRL, &CKTmeasDlg::OnLvnItemchangedListctrl)
+	//ON_BN_CLICKED(IDC_LISTCTRL_ADD, &CKTmeasDlg::OnBnClickedListctrlAdd)
+	ON_BN_CLICKED(IDC_LISTCTRL_DEL, &CKTmeasDlg::OnBnClickedListctrlDel)
+	ON_EN_CHANGE(IDC_LISTCTRL_EDIT, &CKTmeasDlg::OnEnChangeListctrlEdit)
 END_MESSAGE_MAP()
 
 
@@ -176,6 +181,13 @@ BOOL CKTmeasDlg::OnInitDialog()
 
 	GetDlgItem(IDC_CA310_Measure)->EnableWindow(FALSE);
 	GetDlgItem(IDC_BUTTON_MEASURE)->EnableWindow(FALSE);
+
+	CRect rt;
+	m_ListCtrl.GetWindowRect(&rt);
+	m_ListCtrl.SetExtendedStyle(LVS_EX_GRIDLINES | LVS_EX_FULLROWSELECT);
+
+	m_ListCtrl.InsertColumn(0,_T("시간"),LVCFMT_LEFT,rt.Width()*0.5);
+	m_ListCtrl.InsertColumn(1,_T("내용"),LVCFMT_CENTER,rt.Width()*0.5);
 
 	return TRUE;  // 포커스를 컨트롤에 설정하지 않으면 TRUE를 반환합니다.
 }
@@ -380,6 +392,7 @@ void CKTmeasDlg::OnBnClickedCheckCom1()
 			m_ButPort1.SetCheck(false);
 		}
 	}
+	Log("CA connect");
 }
 #endif
 
@@ -438,6 +451,8 @@ void CKTmeasDlg::OnBnClickedCheckCom3()
 		m_ButPort3.SetWindowText("Keithley");
 		m_ButPort3.SetCheck(false);
 	}
+
+	Log("KT connect");
 }
 
 BOOL CKTmeasDlg::SetComPort3(int nPort)
@@ -565,6 +580,7 @@ void CKTmeasDlg::OnBnClickedButtonMeasure()
 	m_Meas=Keithley_Measure();
 	Wait(10);
 	UpdateData(FALSE);
+	Log("KT measure");
 }
 
 
@@ -666,6 +682,7 @@ void CKTmeasDlg::OnBnClickedButtonStart()
 		}
 	break;
 	}
+	Log("Stability finish");
 }
 
 
@@ -713,11 +730,13 @@ void CKTmeasDlg::OnBnClickedButtonVolt()
 {
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 	Write_Comm_CString3(":SYST:KEY 15");
+	Log("Volt setting");
 }
 
 void CKTmeasDlg::OnBnClickedButtonCurr()
 {
 	Write_Comm_CString3(":SYST:KEY 22");
+	Log("Curr setting");
 }
 
 void CKTmeasDlg::OnBnClickedCa310Measure()
@@ -730,6 +749,7 @@ void CKTmeasDlg::OnBnClickedCa310Measure()
 	UpdateData(FALSE);
 
 	return ;
+	Log("CA310 measure");
 }
 
 
@@ -738,17 +758,20 @@ void CKTmeasDlg::OnBnClickedRadioCa()
 {
 	UpdateData(TRUE);
 	m_Mode = 0;
+	Log("CA310 check");
 
 }
 void CKTmeasDlg::OnBnClickedRadioKt()
 {
 	UpdateData(TRUE);
 	m_Mode = 1;
+	Log("keithly check");
 }
 void CKTmeasDlg::OnBnClickedRadioCakt()
 {
 	UpdateData(TRUE);
 	m_Mode = 2;
+	Log("CA_KT check");
 }
 
 
@@ -781,6 +804,7 @@ void CKTmeasDlg::OnBnClickedButtonCsv()
 		Wfile.Close();	
 	}
 
+	Log("CSV save");
 	
 	// 파일 쓰기 예제
 	/*
@@ -811,4 +835,68 @@ void CKTmeasDlg::OnBnClickedButtonCsv()
     dc.TextOut(0,0,ps,lstrlen(ps));
     delete ps;
 	*/
+}
+
+
+void CKTmeasDlg::OnLvnItemchangedListctrl(NMHDR *pNMHDR, LRESULT *pResult)
+{
+	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	*pResult = 0;
+}
+
+/*
+void CKTmeasDlg::OnBnClickedListctrlAdd()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	int num = m_ListCtrl.GetItemCount();
+	CString strDate;
+	CString strTime;
+	CTime gct = CTime::GetCurrentTime();
+	strDate.Format(_T("%d/%d/%d-%d:%d"),gct.GetYear(),gct.GetMonth(),gct.GetDay(),gct.GetHour(),gct.GetMinute());
+
+	CString str;
+	str.Format(_T("%d"),num);
+
+	m_ListCtrl.InsertItem(num,strDate);
+	//m_ListCtrl.SetItem(num,1,LVIF_TEXT,_T("test"),NULL,NULL,NULL,NULL);
+
+	CString str2;
+	GetDlgItemText(IDC_LISTCTRL_EDIT,str2);
+
+	m_ListCtrl.SetItem(num,2,LVIF_TEXT,str2,NULL,NULL,NULL,NULL);
+}
+*/
+void CKTmeasDlg::Log(CString strLog2)
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	int num = m_ListCtrl.GetItemCount();
+	CString strDate;
+	CString strTime;
+	CTime gct = CTime::GetCurrentTime();
+	strDate.Format(_T("%d/%d/%d-%d:%d"),gct.GetYear(),gct.GetMonth(),gct.GetDay(),gct.GetHour(),gct.GetMinute());
+
+	m_ListCtrl.InsertItem(num,strDate);
+
+	m_ListCtrl.SetItem(num,1,LVIF_TEXT,strLog2,NULL,NULL,NULL,NULL);
+}
+
+void CKTmeasDlg::OnBnClickedListctrlDel()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	POSITION pos;
+	pos = m_ListCtrl.GetFirstSelectedItemPosition();
+	int idx = m_ListCtrl.GetNextSelectedItem(pos);
+	m_ListCtrl.DeleteItem(idx);
+}
+
+
+void CKTmeasDlg::OnEnChangeListctrlEdit()
+{
+	// TODO:  RICHEDIT 컨트롤인 경우, 이 컨트롤은
+	// CDialogEx::OnInitDialog() 함수를 재지정 
+	//하고 마스크에 OR 연산하여 설정된 ENM_CHANGE 플래그를 지정하여 CRichEditCtrl().SetEventMask()를 호출하지 않으면
+	// 이 알림 메시지를 보내지 않습니다.
+
+	// TODO:  여기에 컨트롤 알림 처리기 코드를 추가합니다.
 }

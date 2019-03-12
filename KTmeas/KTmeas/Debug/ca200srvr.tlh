@@ -1,9 +1,9 @@
-﻿// Created by Microsoft (R) C/C++ Compiler Version 11.00.50727.1 (7af5f67c).
+﻿// Created by Microsoft (R) C/C++ Compiler Version 11.00.61030.0 (1f94a68a).
 //
-// d:\sw measurement\ktmeas\ktmeas\debug\ca200srvr.tlh
+// d:\hjy\5g_hd\ktmeas\ktmeas\debug\ca200srvr.tlh
 //
 // C++ source equivalent of Win32 type library Libs\CA200Srvr.dll
-// compiler-generated file created 02/13/19 at 20:48:03 - DO NOT EDIT!
+// compiler-generated file created 03/12/19 at 10:13:56 - DO NOT EDIT!
 
 #pragma once
 #pragma pack(push, 8)

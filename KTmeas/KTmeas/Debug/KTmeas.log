@@ -1,2 +1,37 @@
-﻿  KTmeas.cpp
-  KTmeas.vcxproj -> D:\SW measurement\KTmeas\Debug\KTmeas.exe
+﻿빌드 시작: 2019-03-12 오전 11:25:18
+     1>2 노드의 "D:\HJY\5G_HD\KTmeas\KTmeas\KTmeas.vcxproj" 프로젝트(Build 대상)입니다.
+     1>InitializeBuildStatus:
+         "AlwaysCreate"이(가) 지정되었기 때문에 "Debug\KTmeas.unsuccessfulbuild"을(를) 만들고 있습니다.
+       ClCompile:
+         모든 출력이 최신 상태입니다.
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Iinclude /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\KTmeas.pch" /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt KTmeasDlg.cpp
+         KTmeasDlg.cpp
+     1>d:\hjy\5g_hd\ktmeas\ktmeas\ktmeasdlg.cpp(16): warning C4005: '_CRT_SECURE_NO_WARNINGS' : 매크로 재정의
+                 명령줄 인수 :  '_CRT_SECURE_NO_WARNINGS'의 이전 정의를 참조하십시오.
+     1>d:\hjy\5g_hd\ktmeas\ktmeas\ktmeasdlg.cpp(189): warning C4244: '인수' : 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+     1>d:\hjy\5g_hd\ktmeas\ktmeas\ktmeasdlg.cpp(190): warning C4244: '인수' : 'double'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+       ResourceCompile:
+         모든 출력이 최신 상태입니다.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\HJY\5G_HD\KTmeas\Debug\KTmeas.exe" /INCREMENTAL /NOLOGO /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /manifestinput:"C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\Include\Manifest\dpiaware.manifest" /DEBUG /PDB:"D:\HJY\5G_HD\KTmeas\Debug\KTmeas.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\HJY\5G_HD\KTmeas\Debug\KTmeas.lib" /MACHINE:X86 Debug\KTmeas.res
+         Debug\KTmeas.obj
+         Debug\KTmeasDlg.obj
+         Debug\GridCell.obj
+         Debug\GridCellBase.obj
+         Debug\GridCtrl.obj
+         Debug\GridDropTarget.obj
+         Debug\InPlaceEdit.obj
+         Debug\TitleTip.obj
+         Debug\OpticalComp.obj
+         Debug\OpticalEvent.obj
+         Debug\SerialComm.obj
+         Debug\stdafx.obj
+         KTmeas.vcxproj -> D:\HJY\5G_HD\KTmeas\Debug\KTmeas.exe
+       FinalizeBuildStatus:
+         "Debug\KTmeas.unsuccessfulbuild" 파일을 삭제하고 있습니다.
+         "Debug\KTmeas.lastbuildstate"에 연결(touching)하고 있습니다.
+     1>"D:\HJY\5G_HD\KTmeas\KTmeas\KTmeas.vcxproj" 프로젝트를 빌드했습니다(Build 대상).
+
+빌드했습니다.
+
+경과 시간: 00:00:02.18
