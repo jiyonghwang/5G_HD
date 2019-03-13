@@ -1,7 +1,8 @@
 
-// KTmeasDlg.cpp : ±¸Çö ÆÄÀÏ
+// KTmeasDlg.cpp : ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 //
 //test1
+//test2
 
 
 #include "stdafx.h"
@@ -15,20 +16,20 @@
 
 #define _CRT_SECURE_NO_WARNINGS
 
-// ÀÀ¿ë ÇÁ·Î±×·¥ Á¤º¸¿¡ »ç¿ëµÇ´Â CAboutDlg ´ëÈ­ »óÀÚÀÔ´Ï´Ù.
+// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î±×·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ç´ï¿½ CAboutDlg ï¿½ï¿½È­ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.
 
 class CAboutDlg : public CDialogEx
 {
 public:
 	CAboutDlg();
 
-// ´ëÈ­ »óÀÚ µ¥ÀÌÅÍÀÔ´Ï´Ù.
+// ï¿½ï¿½È­ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.
 	enum { IDD = IDD_ABOUTBOX };
 
 	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV Áö¿øÀÔ´Ï´Ù.
+	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.
 
-// ±¸ÇöÀÔ´Ï´Ù.
+// ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½.
 protected:
 	DECLARE_MESSAGE_MAP()
 };
@@ -46,7 +47,7 @@ BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)
 END_MESSAGE_MAP()
 
 
-// CKTmeasDlg ´ëÈ­ »óÀÚ
+// CKTmeasDlg ï¿½ï¿½È­ ï¿½ï¿½ï¿½ï¿½
 
 CKTmeasDlg::CKTmeasDlg(CWnd* pParent /*=NULL*/)
 	: CDialogEx(CKTmeasDlg::IDD, pParent)
@@ -109,15 +110,15 @@ BEGIN_MESSAGE_MAP(CKTmeasDlg, CDialogEx)
 END_MESSAGE_MAP()
 
 
-// CKTmeasDlg ¸Þ½ÃÁö Ã³¸®±â
+// CKTmeasDlg ï¿½Þ½ï¿½ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½
 
 BOOL CKTmeasDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
 
-	// ½Ã½ºÅÛ ¸Þ´º¿¡ "Á¤º¸..." ¸Þ´º Ç×¸ñÀ» Ãß°¡ÇÕ´Ï´Ù.
+	// ï¿½Ã½ï¿½ï¿½ï¿½ ï¿½Þ´ï¿½ï¿½ï¿½ "ï¿½ï¿½ï¿½ï¿½..." ï¿½Þ´ï¿½ ï¿½×¸ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½Õ´Ï´ï¿½.
 
-	// IDM_ABOUTBOX´Â ½Ã½ºÅÛ ¸í·É ¹üÀ§¿¡ ÀÖ¾î¾ß ÇÕ´Ï´Ù.
+	// IDM_ABOUTBOXï¿½ï¿½ ï¿½Ã½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½ ï¿½Õ´Ï´ï¿½.
 	ASSERT((IDM_ABOUTBOX & 0xFFF0) == IDM_ABOUTBOX);
 	ASSERT(IDM_ABOUTBOX < 0xF000);
 
@@ -135,10 +136,10 @@ BOOL CKTmeasDlg::OnInitDialog()
 		}
 	}
 
-	// ÀÌ ´ëÈ­ »óÀÚÀÇ ¾ÆÀÌÄÜÀ» ¼³Á¤ÇÕ´Ï´Ù. ÀÀ¿ë ÇÁ·Î±×·¥ÀÇ ÁÖ Ã¢ÀÌ ´ëÈ­ »óÀÚ°¡ ¾Æ´Ò °æ¿ì¿¡´Â
-	//  ÇÁ·¹ÀÓ¿öÅ©°¡ ÀÌ ÀÛ¾÷À» ÀÚµ¿À¸·Î ¼öÇàÇÕ´Ï´Ù.
-	SetIcon(m_hIcon, TRUE);			// Å« ¾ÆÀÌÄÜÀ» ¼³Á¤ÇÕ´Ï´Ù.
-	SetIcon(m_hIcon, FALSE);		// ÀÛÀº ¾ÆÀÌÄÜÀ» ¼³Á¤ÇÕ´Ï´Ù.
+	// ï¿½ï¿½ ï¿½ï¿½È­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ ï¿½ï¿½ Ã¢ï¿½ï¿½ ï¿½ï¿½È­ ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½Æ´ï¿½ ï¿½ï¿½ì¿¡ï¿½ï¿½
+	//  ï¿½ï¿½ï¿½ï¿½ï¿½Ó¿ï¿½Å©ï¿½ï¿½ ï¿½ï¿½ ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
+	SetIcon(m_hIcon, TRUE);			// Å« ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
+	SetIcon(m_hIcon, FALSE);		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
 	
 	//---serial init catch----
 	//	m_Comm = NULL;
@@ -177,7 +178,7 @@ BOOL CKTmeasDlg::OnInitDialog()
 
 	InitGrid4();  //grid
 
-	// TODO: ¿©±â¿¡ Ãß°¡ ÃÊ±âÈ­ ÀÛ¾÷À» Ãß°¡ÇÕ´Ï´Ù.
+	// TODO: ï¿½ï¿½ï¿½â¿¡ ï¿½ß°ï¿½ ï¿½Ê±ï¿½È­ ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½Õ´Ï´ï¿½.
 
 	GetDlgItem(IDC_CA310_Measure)->EnableWindow(FALSE);
 	GetDlgItem(IDC_BUTTON_MEASURE)->EnableWindow(FALSE);
@@ -186,10 +187,10 @@ BOOL CKTmeasDlg::OnInitDialog()
 	m_ListCtrl.GetWindowRect(&rt);
 	m_ListCtrl.SetExtendedStyle(LVS_EX_GRIDLINES | LVS_EX_FULLROWSELECT);
 
-	m_ListCtrl.InsertColumn(0,_T("½Ã°£"),LVCFMT_LEFT,rt.Width()*0.5);
-	m_ListCtrl.InsertColumn(1,_T("³»¿ë"),LVCFMT_CENTER,rt.Width()*0.5);
+	m_ListCtrl.InsertColumn(0,_T("ï¿½Ã°ï¿½"),LVCFMT_LEFT,rt.Width()*0.5);
+	m_ListCtrl.InsertColumn(1,_T("ï¿½ï¿½ï¿½ï¿½"),LVCFMT_CENTER,rt.Width()*0.5);
 
-	return TRUE;  // Æ÷Ä¿½º¸¦ ÄÁÆ®·Ñ¿¡ ¼³Á¤ÇÏÁö ¾ÊÀ¸¸é TRUE¸¦ ¹ÝÈ¯ÇÕ´Ï´Ù.
+	return TRUE;  // ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½Ñ¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ TRUEï¿½ï¿½ ï¿½ï¿½È¯ï¿½Õ´Ï´ï¿½.
 }
 
 void CKTmeasDlg::OnSysCommand(UINT nID, LPARAM lParam)
@@ -205,19 +206,19 @@ void CKTmeasDlg::OnSysCommand(UINT nID, LPARAM lParam)
 	}
 }
 
-// ´ëÈ­ »óÀÚ¿¡ ÃÖ¼ÒÈ­ ´ÜÃß¸¦ Ãß°¡ÇÒ °æ¿ì ¾ÆÀÌÄÜÀ» ±×¸®·Á¸é
-//  ¾Æ·¡ ÄÚµå°¡ ÇÊ¿äÇÕ´Ï´Ù. ¹®¼­/ºä ¸ðµ¨À» »ç¿ëÇÏ´Â MFC ÀÀ¿ë ÇÁ·Î±×·¥ÀÇ °æ¿ì¿¡´Â
-//  ÇÁ·¹ÀÓ¿öÅ©¿¡¼­ ÀÌ ÀÛ¾÷À» ÀÚµ¿À¸·Î ¼öÇàÇÕ´Ï´Ù.
+// ï¿½ï¿½È­ ï¿½ï¿½ï¿½Ú¿ï¿½ ï¿½Ö¼ï¿½È­ ï¿½ï¿½ï¿½ß¸ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×¸ï¿½ï¿½ï¿½ï¿½ï¿½
+//  ï¿½Æ·ï¿½ ï¿½Úµå°¡ ï¿½Ê¿ï¿½ï¿½Õ´Ï´ï¿½. ï¿½ï¿½ï¿½ï¿½/ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ MFC ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ ï¿½ï¿½ì¿¡ï¿½ï¿½
+//  ï¿½ï¿½ï¿½ï¿½ï¿½Ó¿ï¿½Å©ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½Úµï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
 
 void CKTmeasDlg::OnPaint()
 {
 	if (IsIconic())
 	{
-		CPaintDC dc(this); // ±×¸®±â¸¦ À§ÇÑ µð¹ÙÀÌ½º ÄÁÅØ½ºÆ®ÀÔ´Ï´Ù.
+		CPaintDC dc(this); // ï¿½×¸ï¿½ï¿½â¸¦ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½Ø½ï¿½Æ®ï¿½Ô´Ï´ï¿½.
 
 		SendMessage(WM_ICONERASEBKGND, reinterpret_cast<WPARAM>(dc.GetSafeHdc()), 0);
 
-		// Å¬¶óÀÌ¾ðÆ® »ç°¢Çü¿¡¼­ ¾ÆÀÌÄÜÀ» °¡¿îµ¥¿¡ ¸ÂÃä´Ï´Ù.
+		// Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ® ï¿½ç°¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½îµ¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.
 		int cxIcon = GetSystemMetrics(SM_CXICON);
 		int cyIcon = GetSystemMetrics(SM_CYICON);
 		CRect rect;
@@ -225,7 +226,7 @@ void CKTmeasDlg::OnPaint()
 		int x = (rect.Width() - cxIcon + 1) / 2;
 		int y = (rect.Height() - cyIcon + 1) / 2;
 
-		// ¾ÆÀÌÄÜÀ» ±×¸³´Ï´Ù.
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×¸ï¿½ï¿½Ï´ï¿½.
 		dc.DrawIcon(x, y, m_hIcon);
 	}
 	else
@@ -234,8 +235,8 @@ void CKTmeasDlg::OnPaint()
 	}
 }
 
-// »ç¿ëÀÚ°¡ ÃÖ¼ÒÈ­µÈ Ã¢À» ²ô´Â µ¿¾È¿¡ Ä¿¼­°¡ Ç¥½ÃµÇµµ·Ï ½Ã½ºÅÛ¿¡¼­
-//  ÀÌ ÇÔ¼ö¸¦ È£ÃâÇÕ´Ï´Ù.
+// ï¿½ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½Ö¼ï¿½È­ï¿½ï¿½ Ã¢ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½È¿ï¿½ Ä¿ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ÃµÇµï¿½ï¿½ï¿½ ï¿½Ã½ï¿½ï¿½Û¿ï¿½ï¿½ï¿½
+//  ï¿½ï¿½ ï¿½Ô¼ï¿½ï¿½ï¿½ È£ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
 HCURSOR CKTmeasDlg::OnQueryDragIcon()
 {
 	return static_cast<HCURSOR>(m_hIcon);
@@ -244,7 +245,7 @@ HCURSOR CKTmeasDlg::OnQueryDragIcon()
 
 void CKTmeasDlg::OnBnClickedOk()
 {
-	// TODO: ¿©±â¿¡ ÄÁÆ®·Ñ ¾Ë¸² Ã³¸®±â ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù.
+	// TODO: ï¿½ï¿½ï¿½â¿¡ ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ë¸ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½Úµå¸¦ ï¿½ß°ï¿½ï¿½Õ´Ï´ï¿½.
 	CDialogEx::OnOK();
 }
 
@@ -377,9 +378,9 @@ void CKTmeasDlg::OnBnClickedCheckCom1()
 		if (m_OptiComp.Init())
 		{
 			m_bComConnect=TRUE;
-			GetDlgItem(IDC_CA310_Measure)->EnableWindow(TRUE);      // CA310 ¿¬°á ÇÏ¸é measuer ¹öÆ° È°¼ºÈ­
+			GetDlgItem(IDC_CA310_Measure)->EnableWindow(TRUE);      // CA310 ï¿½ï¿½ï¿½ï¿½ ï¿½Ï¸ï¿½ measuer ï¿½ï¿½Æ° È°ï¿½ï¿½È­
 			m_ButPort1.SetWindowText("Connected");
-			m_ButPort1.SetCheck(true);   //Ã¼Å© ÇØÁ¦ -> Ã¼Å©
+			m_ButPort1.SetCheck(true);   //Ã¼Å© ï¿½ï¿½ï¿½ï¿½ -> Ã¼Å©
 		}
 	}
 	else
@@ -398,13 +399,13 @@ void CKTmeasDlg::OnBnClickedCheckCom1()
 
 BOOL CKTmeasDlg::SetComPort(int nPort)
 {
-	//Æ÷Æ®ÀÇ ÄÄÆ÷Æ®¸¦ ¸ÂÃá´Ù.
+	//ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½.
 	m_Comm.SetComPort(nPort, 38400, 7, TWOSTOPBITS, EVENPARITY);
 
-	//Æ÷Æ®ÀÇ ÄÄÆ÷Æ®¸¦ ¿¬´Ù
+	//ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	if (m_Comm.OpenComPort() == FALSE)
 	{
-		AfxMessageBox("Åë½ÅÀ» ¿¬°áÇÒ ¼ö ¾ø½À´Ï´Ù.");
+		AfxMessageBox("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 		return FALSE;
 	}
 
@@ -431,11 +432,11 @@ void CKTmeasDlg::OnBnClickedCheckCom3()
 			m_ButPort3.SetWindowText("Connected");
 			Kiethley_Connect();
 			GetDlgItem(IDC_BUTTON_MEASURE)->EnableWindow(TRUE);
-			m_ButPort3.SetCheck(true);   //Ã¼Å© ÇØÁ¦ -> Ã¼Å© 
+			m_ButPort3.SetCheck(true);   //Ã¼Å© ï¿½ï¿½ï¿½ï¿½ -> Ã¼Å© 
 		}
 		else
 		{
-			m_ButPort3.SetCheck(false);  //Ã¼Å© -> Ã¼Å© ÇØÁ¦
+			m_ButPort3.SetCheck(false);  //Ã¼Å© -> Ã¼Å© ï¿½ï¿½ï¿½ï¿½
 		}
 	}
 	else
@@ -457,13 +458,13 @@ void CKTmeasDlg::OnBnClickedCheckCom3()
 
 BOOL CKTmeasDlg::SetComPort3(int nPort)
 {
-	//Æ÷Æ®ÀÇ ÄÄÆ÷Æ®¸¦ ¸ÂÃá´Ù.
+	//ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½.
 	m_Comm3.SetComPort(nPort, 57600, 8, ONESTOPBIT, NOPARITY);
 
-	//Æ÷Æ®ÀÇ ÄÄÆ÷Æ®¸¦ ¿¬´Ù
+	//ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	if (m_Comm3.OpenComPort() == FALSE)
 	{
-		AfxMessageBox("Åë½ÅÀ» ¿¬°áÇÒ ¼ö ¾ø½À´Ï´Ù.");
+		AfxMessageBox("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 		return FALSE;
 	}
 
@@ -701,34 +702,34 @@ void CKTmeasDlg::AllGrid_Clear()
 
 void CKTmeasDlg::OnCbnSelchangeComboCom3()
 {
-	// TODO: ¿©±â¿¡ ÄÁÆ®·Ñ ¾Ë¸² Ã³¸®±â ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù.
+	// TODO: ï¿½ï¿½ï¿½â¿¡ ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ë¸ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½Úµå¸¦ ï¿½ß°ï¿½ï¿½Õ´Ï´ï¿½.
 }
 
 void CKTmeasDlg::OnEnChangeEditRepeat()
 {
-	// TODO:  RICHEDIT ÄÁÆ®·ÑÀÎ °æ¿ì, ÀÌ ÄÁÆ®·ÑÀº
-	// CDialogEx::OnInitDialog() ÇÔ¼ö¸¦ ÀçÁöÁ¤ 
-	//ÇÏ°í ¸¶½ºÅ©¿¡ OR ¿¬»êÇÏ¿© ¼³Á¤µÈ ENM_CHANGE ÇÃ·¡±×¸¦ ÁöÁ¤ÇÏ¿© CRichEditCtrl().SetEventMask()¸¦ È£ÃâÇÏÁö ¾ÊÀ¸¸é
-	// ÀÌ ¾Ë¸² ¸Þ½ÃÁö¸¦ º¸³»Áö ¾Ê½À´Ï´Ù.
+	// TODO:  RICHEDIT ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½, ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½
+	// CDialogEx::OnInitDialog() ï¿½Ô¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	//ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½Å©ï¿½ï¿½ OR ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ENM_CHANGE ï¿½Ã·ï¿½ï¿½×¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ CRichEditCtrl().SetEventMask()ï¿½ï¿½ È£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	// ï¿½ï¿½ ï¿½Ë¸ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê½ï¿½ï¿½Ï´ï¿½.
 
 
-	// TODO:  ¿©±â¿¡ ÄÁÆ®·Ñ ¾Ë¸² Ã³¸®±â ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù.
+	// TODO:  ï¿½ï¿½ï¿½â¿¡ ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ë¸ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½Úµå¸¦ ï¿½ß°ï¿½ï¿½Õ´Ï´ï¿½.
 }
 
 void CKTmeasDlg::OnEnChangeEditMeasure()
 {
-	// TODO:  RICHEDIT ÄÁÆ®·ÑÀÎ °æ¿ì, ÀÌ ÄÁÆ®·ÑÀº
-	// CDialogEx::OnInitDialog() ÇÔ¼ö¸¦ ÀçÁöÁ¤ 
-	//ÇÏ°í ¸¶½ºÅ©¿¡ OR ¿¬»êÇÏ¿© ¼³Á¤µÈ ENM_CHANGE ÇÃ·¡±×¸¦ ÁöÁ¤ÇÏ¿© CRichEditCtrl().SetEventMask()¸¦ È£ÃâÇÏÁö ¾ÊÀ¸¸é
-	// ÀÌ ¾Ë¸² ¸Þ½ÃÁö¸¦ º¸³»Áö ¾Ê½À´Ï´Ù.
+	// TODO:  RICHEDIT ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½, ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½
+	// CDialogEx::OnInitDialog() ï¿½Ô¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	//ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½Å©ï¿½ï¿½ OR ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ENM_CHANGE ï¿½Ã·ï¿½ï¿½×¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ CRichEditCtrl().SetEventMask()ï¿½ï¿½ È£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	// ï¿½ï¿½ ï¿½Ë¸ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê½ï¿½ï¿½Ï´ï¿½.
 
 
-	// TODO:  ¿©±â¿¡ ÄÁÆ®·Ñ ¾Ë¸² Ã³¸®±â ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù.
+	// TODO:  ï¿½ï¿½ï¿½â¿¡ ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ë¸ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½Úµå¸¦ ï¿½ß°ï¿½ï¿½Õ´Ï´ï¿½.
 }
 
 void CKTmeasDlg::OnBnClickedButtonVolt()
 {
-	// TODO: ¿©±â¿¡ ÄÁÆ®·Ñ ¾Ë¸² Ã³¸®±â ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù.
+	// TODO: ï¿½ï¿½ï¿½â¿¡ ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ë¸ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½Úµå¸¦ ï¿½ß°ï¿½ï¿½Õ´Ï´ï¿½.
 	Write_Comm_CString3(":SYST:KEY 15");
 	Log("Volt setting");
 }
@@ -806,18 +807,18 @@ void CKTmeasDlg::OnBnClickedButtonCsv()
 
 	Log("CSV save");
 	
-	// ÆÄÀÏ ¾²±â ¿¹Á¦
+	// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	/*
     char* ps = new char[27];
     char* ps2 = ps;
     for(int i=0;i<26;i++)
         *ps2++ = 'a'+i;
-    *ps2 = NULL;    // NULL ¹®ÀÚ·Î ³¡³ª°Ô ÇÑ´Ù.
+    *ps2 = NULL;    // NULL ï¿½ï¿½ï¿½Ú·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ´ï¿½.
     Wfile.Write(ps,27);
     Wfile.Close();
     delete ps;
 	*/
-	//ÆÄÀÏ ÀÐ±â ¿¹Á¦
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½Ð±ï¿½ ï¿½ï¿½ï¿½ï¿½
 	/*
 	CFile Rfile;
     if(!Wfile.Open("TestFile.txt", CFile::modeRead))
@@ -841,14 +842,14 @@ void CKTmeasDlg::OnBnClickedButtonCsv()
 void CKTmeasDlg::OnLvnItemchangedListctrl(NMHDR *pNMHDR, LRESULT *pResult)
 {
 	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
-	// TODO: ¿©±â¿¡ ÄÁÆ®·Ñ ¾Ë¸² Ã³¸®±â ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù.
+	// TODO: ï¿½ï¿½ï¿½â¿¡ ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ë¸ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½Úµå¸¦ ï¿½ß°ï¿½ï¿½Õ´Ï´ï¿½.
 	*pResult = 0;
 }
 
 /*
 void CKTmeasDlg::OnBnClickedListctrlAdd()
 {
-	// TODO: ¿©±â¿¡ ÄÁÆ®·Ñ ¾Ë¸² Ã³¸®±â ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù.
+	// TODO: ï¿½ï¿½ï¿½â¿¡ ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ë¸ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½Úµå¸¦ ï¿½ß°ï¿½ï¿½Õ´Ï´ï¿½.
 	int num = m_ListCtrl.GetItemCount();
 	CString strDate;
 	CString strTime;
@@ -869,7 +870,7 @@ void CKTmeasDlg::OnBnClickedListctrlAdd()
 */
 void CKTmeasDlg::Log(CString strLog2)
 {
-	// TODO: ¿©±â¿¡ ÄÁÆ®·Ñ ¾Ë¸² Ã³¸®±â ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù.
+	// TODO: ï¿½ï¿½ï¿½â¿¡ ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ë¸ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½Úµå¸¦ ï¿½ß°ï¿½ï¿½Õ´Ï´ï¿½.
 	int num = m_ListCtrl.GetItemCount();
 	CString strDate;
 	CString strTime;
@@ -883,7 +884,7 @@ void CKTmeasDlg::Log(CString strLog2)
 
 void CKTmeasDlg::OnBnClickedListctrlDel()
 {
-	// TODO: ¿©±â¿¡ ÄÁÆ®·Ñ ¾Ë¸² Ã³¸®±â ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù.
+	// TODO: ï¿½ï¿½ï¿½â¿¡ ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ë¸ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½Úµå¸¦ ï¿½ß°ï¿½ï¿½Õ´Ï´ï¿½.
 	POSITION pos;
 	pos = m_ListCtrl.GetFirstSelectedItemPosition();
 	int idx = m_ListCtrl.GetNextSelectedItem(pos);
@@ -893,10 +894,10 @@ void CKTmeasDlg::OnBnClickedListctrlDel()
 
 void CKTmeasDlg::OnEnChangeListctrlEdit()
 {
-	// TODO:  RICHEDIT ÄÁÆ®·ÑÀÎ °æ¿ì, ÀÌ ÄÁÆ®·ÑÀº
-	// CDialogEx::OnInitDialog() ÇÔ¼ö¸¦ ÀçÁöÁ¤ 
-	//ÇÏ°í ¸¶½ºÅ©¿¡ OR ¿¬»êÇÏ¿© ¼³Á¤µÈ ENM_CHANGE ÇÃ·¡±×¸¦ ÁöÁ¤ÇÏ¿© CRichEditCtrl().SetEventMask()¸¦ È£ÃâÇÏÁö ¾ÊÀ¸¸é
-	// ÀÌ ¾Ë¸² ¸Þ½ÃÁö¸¦ º¸³»Áö ¾Ê½À´Ï´Ù.
+	// TODO:  RICHEDIT ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½, ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½
+	// CDialogEx::OnInitDialog() ï¿½Ô¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+	//ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½Å©ï¿½ï¿½ OR ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ENM_CHANGE ï¿½Ã·ï¿½ï¿½×¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¿ï¿½ CRichEditCtrl().SetEventMask()ï¿½ï¿½ È£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	// ï¿½ï¿½ ï¿½Ë¸ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê½ï¿½ï¿½Ï´ï¿½.
 
-	// TODO:  ¿©±â¿¡ ÄÁÆ®·Ñ ¾Ë¸² Ã³¸®±â ÄÚµå¸¦ Ãß°¡ÇÕ´Ï´Ù.
+	// TODO:  ï¿½ï¿½ï¿½â¿¡ ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ë¸ï¿½ Ã³ï¿½ï¿½ï¿½ï¿½ ï¿½Úµå¸¦ ï¿½ß°ï¿½ï¿½Õ´Ï´ï¿½.
 }
