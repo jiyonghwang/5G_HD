@@ -1,6 +1,7 @@
 
 // KTmeasDlg.cpp : 구현 파일
 //
+//test2
 
 
 
