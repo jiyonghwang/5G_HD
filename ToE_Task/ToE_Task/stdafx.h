@@ -34,11 +34,15 @@
 #include <afxcontrolbars.h>     // MFC의 리본 및 컨트롤 막대 지원
 
 
+//CGridCtrl 입력
+#define STX1	0xF0
+#define STX2	0xFD
+#define ETX		0xFE
 
-
-
-
-
+typedef enum { 
+	REGISTOR_MODE = 1, 
+	OS_MODE = 2 
+} MODE_TYPE;
 
 
 #ifdef _UNICODE

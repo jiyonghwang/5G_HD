@@ -67,6 +67,7 @@ void CTabSettings::OnBnClickedBnFileOpen()
 	{
 		SetDlgItemText(IDC_EDIT_PATH, m_strFilePath);  //edit 에 파일경로 확인
 	}
+
 }
 
 void CTabSettings::OnBnClickedBnPathOpen()

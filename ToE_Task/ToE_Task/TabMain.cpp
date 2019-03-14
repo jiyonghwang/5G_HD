@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "ToE_Task.h"
+#include "ToE_TaskDlg.h"
 #include "TabMain.h"
 #include "TabLog.h"
 #include "TabSettings.h"
@@ -31,7 +32,8 @@ void CTabMain::DoDataExchange(CDataExchange* pDX)
 	DDX_Control(pDX, IDC_EDIT_DATA_COLLECT, m_datacollect);
 	DDX_Control(pDX, IDC_EDIT_ATUOTUNE, m_autotune);
 	DDX_Control(pDX, IDC_BN_START, m_mainstart);
-	DDX_Control(pDX, IDC_LIST_LOG2, m_ListCtrl2);
+	DDX_Control(pDX, IDC_CUSTOM1, m_Grid4);
+	DDX_GridControl(pDX, IDC_CUSTOM1, m_Grid4);   //grid 
 }
 
 
@@ -40,7 +42,6 @@ BEGIN_MESSAGE_MAP(CTabMain, CDialogEx)
 	ON_EN_CHANGE(IDC_EDIT_SELF_CHECK, &CTabMain::OnEnChangeEditSelfCheck)
 	ON_EN_CHANGE(IDC_EDIT_INIT, &CTabMain::OnEnChangeEditInit)
 	ON_EN_CHANGE(IDC_EDIT_ITO_TEST, &CTabMain::OnEnChangeEditItoTest) 
-	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST_LOG2, &CTabMain::OnLvnItemchangedListLog2)
 END_MESSAGE_MAP()
 
 
@@ -68,18 +69,100 @@ BOOL CTabMain::OnInitDialog()
 	GetDlgItem(IDC_EDIT_MUTUAL_CHECK)->SetWindowText("Mutual Check");
 	GetDlgItem(IDC_EDIT_SELF_CHECK)->SetWindowText("Self Check");
 
-	CRect rt;
-	m_ListCtrl2.GetWindowRect(&rt);
-	m_ListCtrl2.SetExtendedStyle(LVS_EX_GRIDLINES | LVS_EX_FULLROWSELECT);
-
-	m_ListCtrl2.InsertColumn(0,_T("TIMESTAMP"),LVCFMT_LEFT,rt.Width()*0.3);
-	m_ListCtrl2.InsertColumn(1,_T("MESSAGE"),LVCFMT_CENTER,rt.Width()*0.5);
+	InitGrid4();  //grid
 
 	return TRUE;  // return TRUE unless you set the focus to a control
 	// 예외: OCX 속성 페이지는 FALSE를 반환해야 합니다.
 }
 
 
+void CTabMain::InitGrid4()
+{
+	int nRows = 10;
+	int nCols = 8;
+
+	m_Grid4.SetEditable(TRUE);
+	m_Grid4.SetAutoSizeStyle();
+	m_Grid4.SetColumnResize(0);
+	m_Grid4.SetRowResize(0);
+	m_Grid4.SetSingleRowSelection(2);
+	m_Grid4.SetTrackFocusCell(FALSE); 
+	m_Grid4.SetFrameFocusCell(FALSE);
+	m_Grid4.SetFont(this->GetFont());
+
+	TRY{
+		m_Grid4.SetRowCount(nRows);
+		m_Grid4.SetColumnCount(nCols);
+		m_Grid4.SetFixedColumnCount(0);
+		
+	}
+	CATCH (CMemoryException, e)
+	{
+		e->ReportError();
+		return;
+	}
+	END_CATCH
+
+	CString str;
+	GV_ITEM Item;
+
+	CRect rtSize;
+	m_Grid4.GetClientRect(&rtSize);
+	for (int col = 0; col < m_Grid4.GetColumnCount(); col++)
+	{			
+		Item.mask = GVIF_TEXT | GVIF_FORMAT ;
+		Item.row = 0;
+		Item.col = col;
+
+		Item.nFormat = DT_CENTER|DT_VCENTER|DT_SINGLELINE;
+		Item.crBkClr = RGB(255,255,255);
+		Item.mask |= GVIF_BKCLR;		
+
+		switch (col)
+		{
+		case 0: str = _T("Repeat"); break;
+		case 1: str = _T("Date"); break;
+		case 2: str = _T("Time"); break;
+		case 3: str = _T("Value"); break;
+		case 4: str = _T("units"); break;
+		case 5: str = _T("X"); break;
+		case 6: str = _T("Y"); break;
+		case 7: str = _T("Lv"); break;
+		}
+		Item.strText = str;		
+		m_Grid4.SetColumnWidth(col, rtSize.Width()/m_Grid4.GetColumnCount());		//55
+		m_Grid4.SetItem(&Item);
+
+		Item.mask = GVIF_TEXT | GVIF_FORMAT ;
+		Item.row = 1;
+		Item.col = col;
+		Item.nFormat = DT_RIGHT|DT_VCENTER|DT_SINGLELINE|DT_CENTER;
+		Item.mask |= GVIF_BKCLR;
+		
+
+		Item.crBkClr = RGB(255,255,255);
+		Item.strText = _T("");
+	
+		m_Grid4.SetItem(&Item);
+	}
+	for (int row = 0; row < m_Grid4.GetRowCount(); row++)
+	{
+		int mA;
+		CString Str_mA;
+		mA= row+1;
+		Str_mA.Format(_T("%d"),mA);
+		Item.mask = GVIF_TEXT | GVIF_FORMAT ;
+		Item.col = 0;
+		Item.row = row+1;
+		Item.nFormat = DT_RIGHT|DT_VCENTER|DT_SINGLELINE|DT_CENTER;
+		Item.mask |= GVIF_BKCLR;
+		Item.crBkClr = RGB(255,255,255);
+		Item.strText = Str_mA;
+		m_Grid4.SetItem(&Item);
+		m_Grid4.SetRowHeight(row,rtSize.Height()/m_Grid4.GetRowCount());
+	}
+	
+}
 
 void CTabMain::OnBnClickedBnStart()
 {
@@ -108,8 +191,9 @@ void CTabMain::OnBnClickedBnStart()
 	GetDlgItem(IDC_EDIT_MUTUAL_CHECK)->SetWindowText("Mutual Check");
 	GetDlgItem(IDC_EDIT_SELF_CHECK)->SetWindowText("Self Check");
 
-	CTabLog ptablog;
-	ptablog.Log("start");
+	//log 기록
+	CToE_TaskDlg *pFrm = (CToE_TaskDlg *)AfxGetMainWnd();
+	pFrm->pDlgLog->Log("start");
 }
 
 void CTabMain::Wait(DWORD dwMillisecond)
@@ -173,24 +257,3 @@ void CTabMain::OnEnChangeEditItoTest()
 }
 
 
-
-void CTabMain::OnLvnItemchangedListLog2(NMHDR *pNMHDR, LRESULT *pResult)
-{
-	LPNMLISTVIEW pNMLV = reinterpret_cast<LPNMLISTVIEW>(pNMHDR);
-	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
-	*pResult = 0;
-}
-
-void CTabMain::Log(CString strLog2)
-{
-	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
-	int num = m_ListCtrl2.GetItemCount();
-	CString strDate;
-	CString strTime;
-	CTime gct = CTime::GetCurrentTime();
-	strDate.Format(_T("%d/%d/%d-%d:%d"),gct.GetYear(),gct.GetMonth(),gct.GetDay(),gct.GetHour(),gct.GetMinute());
-
-	m_ListCtrl2.InsertItem(num,strDate);
-
-	m_ListCtrl2.SetItem(num,1,LVIF_TEXT,strLog2,NULL,NULL,NULL,NULL);
-}

@@ -1,8 +1,9 @@
 
 #pragma once
 #include "afxwin.h"
+#include <sys/timeb.h>
 #include "afxcmn.h"
-
+#include "D:\HJY\5G_HD\ToE_Task\ToE_Task\Libs\GridCtrl\GridCtrl.h"
 // TabMain 대화 상자입니다.
 
 class CTabMain : public CDialogEx
@@ -39,7 +40,6 @@ public:
 	afx_msg void Wait(DWORD dwMillisecond);
 	afx_msg void OnEnChangeEditItoTest();
 
-	afx_msg void OnLvnItemchangedListLog2(NMHDR *pNMHDR, LRESULT *pResult);
-	CListCtrl m_ListCtrl2;
-	void Log(CString strLog2);
+	CGridCtrl m_Grid4;
+	void InitGrid4();
 };
