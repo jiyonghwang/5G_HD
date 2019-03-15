@@ -78,8 +78,8 @@ BOOL CTabMain::OnInitDialog()
 
 void CTabMain::InitGrid4()
 {
-	int nRows = 10;
-	int nCols = 8;
+	int nRows = 16;
+	int nCols = 34;
 
 	m_Grid4.SetEditable(TRUE);
 	m_Grid4.SetAutoSizeStyle();
@@ -118,17 +118,9 @@ void CTabMain::InitGrid4()
 		Item.crBkClr = RGB(255,255,255);
 		Item.mask |= GVIF_BKCLR;		
 
-		switch (col)
-		{
-		case 0: str = _T("Repeat"); break;
-		case 1: str = _T("Date"); break;
-		case 2: str = _T("Time"); break;
-		case 3: str = _T("Value"); break;
-		case 4: str = _T("units"); break;
-		case 5: str = _T("X"); break;
-		case 6: str = _T("Y"); break;
-		case 7: str = _T("Lv"); break;
-		}
+		if(col == 0) {str.Format("");}
+		else {str.Format(_T("Rx%d"),col-1);}
+
 		Item.strText = str;		
 		m_Grid4.SetColumnWidth(col, rtSize.Width()/m_Grid4.GetColumnCount());		//55
 		m_Grid4.SetItem(&Item);
@@ -149,8 +141,8 @@ void CTabMain::InitGrid4()
 	{
 		int mA;
 		CString Str_mA;
-		mA= row+1;
-		Str_mA.Format(_T("%d"),mA);
+		mA= row;
+		Str_mA.Format(_T("Tx%d"),mA);
 		Item.mask = GVIF_TEXT | GVIF_FORMAT ;
 		Item.col = 0;
 		Item.row = row+1;

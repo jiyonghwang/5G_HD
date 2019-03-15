@@ -21,11 +21,13 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	virtual BOOL OnInitDialog();
-	afx_msg void OnBnClickedBnFileOpen();
-	afx_msg void OnEnChangeEdit1();
+
 	afx_msg void OnEnChangeEditPath();
 	CString m_strFilePath;
-	afx_msg void OnFileList2();
 	afx_msg void OnBnClickedBnPathOpen();
 	CEdit m_pathfile;
+	afx_msg void OnBnClickedBnPathRead();
+	CEdit m_Loading;
+	afx_msg void OnEnChangeEditLoading();
+	afx_msg void OnBnClickedBnFileLoading();
 };
