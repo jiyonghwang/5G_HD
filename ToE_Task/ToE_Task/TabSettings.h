@@ -30,4 +30,5 @@ public:
 	CEdit m_Loading;
 	afx_msg void OnEnChangeEditLoading();
 	afx_msg void OnBnClickedBnFileLoading();
+
 };

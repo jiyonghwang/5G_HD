@@ -56,7 +56,7 @@ BOOL CTabSettings::OnInitDialog()
 void CTabSettings::OnBnClickedBnPathRead()
 {
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
-		char szFilter[]="hello(*.csv)|*.xls|User Settings(*.cfg)|*.cfg|All Files(*.*)|*.*|";
+	char szFilter[]="hello(*.csv)|*.xls|User Settings(*.cfg)|*.cfg|All Files(*.*)|*.*|";
 	CFileDialog fDlg(TRUE, NULL, NULL, OFN_HIDEREADONLY, szFilter);
 	//(TRUE(읽기)/FALSE(저장),기본확장자,기본파일명,열기모드->MSDN참고, 파일창 아래쪽에 나오는 필터링)
 
@@ -78,17 +78,57 @@ void CTabSettings::OnBnClickedBnPathOpen()
 void CTabSettings::OnBnClickedBnFileLoading()
 {
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
-
+	/*
 	CFile file;  
 	CString cList;  //한줄씩 임시로 저장할 변수  
 	int lineCount = 0; //line 수를 저장할 변수 선언
+	int nLength = file.GetLength();
 	file.Open(m_strFilePath, CFile::modeRead); //  fName 의 파일을 열고 
 	CArchive ar(&file, CArchive::load);
 	ar.ReadString(cList); //한줄씩 파일을 읽어와서 cList저장 
-	//AfxMessageBox(cList);
-	SetDlgItemText(IDC_EDIT_LOADING, cList);
+	AfxMessageBox(cList);
+	//SetDlgItemText(IDC_EDIT_LOADING, cList);
 	ar.Close();
 	file.Close();
+	*/
+	
+	CFile file;
+	CString strFile; // 파일의 내용을 담는다.
+	CString strtest; // 결과를 확인해보기 위한 임시 변수 설정
+	int nFileSize = 0; // 파일의 크기
+	CStringArray strWordArray; // 단어를 담을 스트링 배열 // CString의 배열 보다 CStirng을 담을 수 있는 배열을 쓰는게 효율적이다.
+	CString strWord; // 하나의 단어를 담을 임시 변수
+	
+	strWordArray.RemoveAll();
+	
+	if (file.Open(m_strFilePath, CFile::modeRead))
+	{
+		int nFileSize = file.GetLength(); 	// 파일의 크기를 구한다.
+		strtest.Format("%d",nFileSize); 
+		//AfxMessageBox(strtest); //파일 크기 결과 보기
+		file.Read(strFile.GetBuffer(nFileSize), nFileSize); // 파일의 크기 만큼 읽어 CString 변수에 담는다.
+		strFile.ReleaseBuffer(nFileSize);
+		AfxMessageBox(strFile);  //읽어온 파일의 내용을 출력
+		while(strFile.Find(",") != -1)
+		{		
+			strWord = strFile.Left(strFile.Find(","));
+			//AfxMessageBox(strWord);
+			strWordArray.Add(strWord);
+			strFile.Delete(0, strWord.GetLength()+1);
+		}
+		//strWordArray.Add(strFile);
+		AfxMessageBox(strWordArray[47]);   //0~47 
+		
+		for(int i =0;i<strWordArray.GetSize(); i++)
+		{
+			SetDlgItemText(IDC_EDIT_LOADING, strWordArray[i]);
+			Sleep(500);
+		}
+		//strtest.Format("%d",strWordArray.GetCount()); 
+		//SetDlgItemText(IDC_EDIT_LOADING, strtest); //0~47 이므로 48의 값이 나옴.
+		file.Close();		
+		
+	}
 }
 
 void CTabSettings::OnEnChangeEditPath()
