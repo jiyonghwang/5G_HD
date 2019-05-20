@@ -460,7 +460,7 @@ void CKTmeasDlg::OnBnClickedCheckCom3()
 BOOL CKTmeasDlg::SetComPort3(int nPort)
 {
 	//��Ʈ�� ����Ʈ�� �����.
-	m_Comm3.SetComPort(nPort, 57600, 8, ONESTOPBIT, NOPARITY);
+	m_Comm3.SetComPort(nPort, 19200, 8, ONESTOPBIT, NOPARITY);
 
 	//��Ʈ�� ����Ʈ�� ����
 	if (m_Comm3.OpenComPort() == FALSE)
@@ -537,7 +537,7 @@ CString CKTmeasDlg::Keithley_Measure()
 	CString check;
 	CString str_out;
 
-	Write_Comm_CString3("READ?");
+	Write_Comm_CString3(":FETCh?");
 
 	while(true)
 	{
@@ -737,7 +737,7 @@ void CKTmeasDlg::OnBnClickedButtonVolt()
 
 void CKTmeasDlg::OnBnClickedButtonCurr()
 {
-	Write_Comm_CString3(":SYST:KEY 22");
+	Write_Comm_CString3(":syst:key 4");
 	Log("Curr setting");
 }
 

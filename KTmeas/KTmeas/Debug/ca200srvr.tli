@@ -1,9 +1,9 @@
-﻿// Created by Microsoft (R) C/C++ Compiler Version 11.00.61030.0 (04d53211).
+﻿// Created by Microsoft (R) C/C++ Compiler Version 11.00.61030.0 (c46198bb).
 //
-// d:\hjy\5g_hd\ktmeas\ktmeas\debug\ca200srvr.tli
+// d:\sw\5g_hd\ktmeas\ktmeas\debug\ca200srvr.tli
 //
 // Wrapper implementations for Win32 type library Libs\CA200Srvr.dll
-// compiler-generated file created 03/12/19 at 10:13:56 - DO NOT EDIT!
+// compiler-generated file created 05/20/19 at 19:11:13 - DO NOT EDIT!
 
 #pragma once
 

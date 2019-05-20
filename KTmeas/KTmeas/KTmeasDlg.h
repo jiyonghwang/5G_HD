@@ -8,7 +8,7 @@
 #include <sys/timeb.h>
 #include "afxcmn.h"
 #include "Libs\GridCtrl\GridCtrl.h"
-#include "D:\HJY\5G_HD\KTmeas\KTmeas\Libs\GridCtrl\gridctrl.h"
+#include "D:\SW\5G_HD\KTmeas\KTmeas\Libs\GridCtrl\gridctrl.h"
 #include "OpticalComp.h"
 
 
