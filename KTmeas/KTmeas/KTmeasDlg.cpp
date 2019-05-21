@@ -81,6 +81,8 @@ void CKTmeasDlg::DoDataExchange(CDataExchange* pDX)
 	//  DDX_Radio(pDX, IDC_RADIO_CA, m_Mode);
 	DDX_Radio(pDX, IDC_RADIO_CA, m_Mode);
 	DDX_Control(pDX, IDC_LISTCTRL, m_ListCtrl);
+	//  DDX_Control(pDX, IDC_BUTTON_START, m_btn_start);
+	DDX_Control(pDX, IDC_BUTTON_START, m_ButStart);
 }
 
 BEGIN_MESSAGE_MAP(CKTmeasDlg, CDialogEx)
@@ -255,7 +257,7 @@ void CKTmeasDlg::OnBnClickedOk()
 void CKTmeasDlg::InitGrid4()
 {
 	int nRows = 10;
-	int nCols = 8;
+	int nCols = 9;
 
 	m_Grid4.SetEditable(TRUE);
 	m_Grid4.SetAutoSizeStyle();
@@ -382,6 +384,7 @@ void CKTmeasDlg::OnBnClickedCheckCom1()
 			GetDlgItem(IDC_CA310_Measure)->EnableWindow(TRUE);      // CA310 ���� �ϸ� measuer ��ư Ȱ��ȭ
 			m_ButPort1.SetWindowText("Connected");
 			m_ButPort1.SetCheck(true);   //üũ ���� -> üũ
+			Log("CA connect");
 		}
 	}
 	else
@@ -392,9 +395,10 @@ void CKTmeasDlg::OnBnClickedCheckCom1()
 			m_OptiComp.m_pCaObj->RemoteMode = 0;
 			m_ButPort1.SetWindowText("CA310");
 			m_ButPort1.SetCheck(false);
+			Log("CA cancel");
 		}
 	}
-	Log("CA connect");
+
 }
 #endif
 
@@ -434,27 +438,31 @@ void CKTmeasDlg::OnBnClickedCheckCom3()
 			Kiethley_Connect();
 			GetDlgItem(IDC_BUTTON_MEASURE)->EnableWindow(TRUE);
 			m_ButPort3.SetCheck(true);   //üũ ���� -> üũ 
+			Log("KT connect");
 		}
 		else
 		{
 			m_ButPort3.SetCheck(false);  //üũ -> üũ ����
+			Log("KT connect fail");
 		}
 	}
 	else
 	{
-		cmd.Format(_T(":OUTP OFF"));
-		Write_Comm_CString3(cmd);
-		Wait(10);
-		cmd.Format(_T(":SYST:KEY 23"));  //local key
+		//cmd.Format(_T(":OUTP OFF")); //KT 2400
+		//Write_Comm_CString3(cmd);
+		//Wait(10);
+		//cmd.Format(_T(":SYST:KEY 23"));  //local key 2400
+		cmd.Format(_T(":SYST:KEY 17"));  //local key 2000
 		Write_Comm_CString3(cmd);
 		Wait(10);
 		m_Comm3.DestroyComm();
 		m_bComConnect3 = FALSE;
 		m_ButPort3.SetWindowText("Keithley");
 		m_ButPort3.SetCheck(false);
+		Log("KT connect dont");
 	}
 
-	Log("KT connect");
+	
 }
 
 BOOL CKTmeasDlg::SetComPort3(int nPort)
@@ -480,9 +488,12 @@ void CKTmeasDlg::Kiethley_Connect()
 	cmd.Format(_T("*CLS"));
 	Write_Comm_CString3(cmd);
 	Wait(10);
-	cmd.Format(_T(":OUTP ON"));
-	Write_Comm_CString3(cmd);
-	Wait(10);
+	//cmd.Format(_T(":INITiate"));
+	//Write_Comm_CString3(cmd);
+	//Wait(10);
+	//cmd.Format(_T(":OUTP ON"));
+	//Write_Comm_CString3(cmd);
+	//Wait(10);
 }
 
 void CKTmeasDlg::Wait(DWORD dwMillisecond)
@@ -590,7 +601,8 @@ void CKTmeasDlg::OnBnClickedButtonStart()
 {
 	GV_ITEM Item;
 	UpdateData(TRUE);
-
+	m_ButStart.SetWindowText("starting");
+	Log("Stability start");
 	CString strDate;
 	CString strTime;
 	CString time;
@@ -685,6 +697,7 @@ void CKTmeasDlg::OnBnClickedButtonStart()
 	break;
 	}
 	Log("Stability finish");
+	m_ButStart.SetWindowText("start");
 }
 
 
@@ -731,13 +744,15 @@ void CKTmeasDlg::OnEnChangeEditMeasure()
 void CKTmeasDlg::OnBnClickedButtonVolt()
 {
 	// TODO: ���⿡ ��Ʈ�� �˸� ó���� �ڵ带 �߰��մϴ�.
-	Write_Comm_CString3(":SYST:KEY 15");
+	//Write_Comm_CString3(":SYST:KEY 15"); //keithly 2400 
+	Write_Comm_CString3(":SYST:KEY 2"); //keithly 2000
 	Log("Volt setting");
 }
 
 void CKTmeasDlg::OnBnClickedButtonCurr()
 {
-	Write_Comm_CString3(":syst:key 4");
+	//Write_Comm_CString3(":SYSY:KEY 4"); //keithly 2400
+	Write_Comm_CString3(":syst:key 4"); //keithly 2000
 	Log("Curr setting");
 }
 

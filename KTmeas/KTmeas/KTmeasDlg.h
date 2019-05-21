@@ -109,4 +109,6 @@ public:
 	afx_msg void OnBnClickedListctrlDel();
 	afx_msg void OnEnChangeListctrlEdit();
 	void Log(CString strLog2);
+//	CButton m_btn_start;
+	CButton m_ButStart;
 };
