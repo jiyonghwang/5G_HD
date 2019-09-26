@@ -387,74 +387,170 @@ class KT():
             print("Unknown system setting!")
             return None
 
-    class HD():
-        def graytrackinglog(self):
-            if os.path.isfile("OC_meas_log.csv"):
-                print "Yes file"
+class HD():
+	def graytracking(self, graystart = 255, grayend = 0, graystep = 1):
+        TT = time.time()
+        oc = OC()
+        ser = oc.ca_init()
+        f = open('GrayTracking.csv','w')
+        wr = csv.writer(f)
+        wr.writerow(["gray","x","y","lv"])
+        gpu_set(val = graystart)
+        time.sleep(1)
+        if graystart > grayend:
+            for graystart in range(graystart,grayend-graystep,-graystep):
+                gpu_set(val = graystart)
+                time.sleep(0.1)
+                print "gray :",graystart
+                ca_ms = oc.ca_measure(ser)
+                x = ca_ms[0]
+                y = ca_ms[1]
+                lv = ca_ms[2]
+                print("X: %s / Y: %s, / Lv: %s" % (x,y,lv))
+                wr.writerow([graystart,x, y, lv])
+        else:
+            for graystart in range(graystart,grayend+graystep,+graystep):
+                gpu_set(val = graystart)
+                time.sleep(0.1)
+                print "gray :",graystart
+                ca_ms = oc.ca_measure(ser)
+                x = ca_ms[0]
+                y = ca_ms[1]
+                lv = ca_ms[2]
+                print("X: %s / Y: %s, / Lv: %s" % (x,y,lv))
+                wr.writerow([graystart,x, y, lv])
+        print "graytracking finish"
+        ser.write("COM,0\r\n")
+        print(time.time()-TT)
 
-                # csv file write
-                r1 = open('OC_meas_log.csv', 'r')
-                OC_para_C = list(csv.reader(r1))
-                y_OC_para_C = len(OC_para_C)
-                x_OC_para_C = len(OC_para_C[0])
+    def gtg(self):
+        oc = OC()
+        gray = []
+        gX = []
+        gY = []
+        gLv = []
+        Ideal_lv = []
+        gt = self.GT_csv()
+        oc = oc.OC_Paramter()
+        for i in range(1, len(gt)):
+            gray.append(int(gt[i][0]))
+            gX.append(float(gt[i][1]))
+            gY.append(float(gt[i][2]))
+            gLv.append(float(gt[i][3]))
+        for i in range(1, len(gt)-1):
+            Ideal_lv.append((float(i) / 255) ** 2.2 * float(oc[2][9]))
+        spec = 0.005
+        xmin = np.array(255*[0.3127-spec])
+        xmax = np.array(255*[0.3127+spec])
+        ymin = np.array(255*[0.329-spec])
+        ymax = np.array(255*[0.329+spec])
+        if float(gt[1][0])==255:
+            gray.reverse()
+            gX.reverse()
+            gY.reverse()
+            gLv.reverse()
+            del(gray[0])
+            del (gX[0])
+            del (gY[0])
+            del (gLv[0])
+        elif float(gt[1][0])==0:
+            del (gray[0])
+            del (gX[0])
+            del (gY[0])
+            del (gLv[0])
+        plt.figure(1,figsize=[16, 12])
+        plt.subplot(211)
+        plt.plot(gray, gX, 'co',gray,xmin,'r--',gray,xmax,'r--', linewidth=1)
+        plt.title('x',fontsize=12, color='blue')
+        plt.ylim(ymax=0.3127+spec*3, ymin=0.3127-spec*3)
+        plt.xlim(xmax=255, xmin=0)
+        plt.subplot(212)
+        plt.plot(gray, gY, 'yo',gray,ymin,'r--',gray,ymax,'r--')
+        plt.title('y',fontsize=12, color='blue')
+        plt.ylim(ymax=0.329+spec*3, ymin=0.329-spec*3)
+        plt.xlim(xmax=255, xmin=0)
+        plt.xlabel('gray',fontsize=10, color='black')
+        plt.figure(2, figsize=[16, 12])
+        plt.plot(gray, gLv, gray, Ideal_lv)
+        plt.title('Lv',fontsize=12, color='blue')
+        plt.xlabel('gray',fontsize=10, color='black')
+        plt.xlim(xmax=255, xmin=0)
+        plt.show()
 
-                # tracking
-                f = open('OC_meas_log.csv', 'ab', )
-                wr = csv.writer(f)
+    def GT_csv(self):
+        c = open('GrayTracking.csv', 'r')
+        G_para = list(csv.reader(c))
+        c.close()
+        return G_para
 
-                now = datetime.datetime.now()
-                nowDate = now.strftime('%Y-%m-%d')
-                nowTime = now.strftime('%H:%M:%S')
-                wr.writerow([nowDate, nowTime, "", ""])
-                wr.writerow(["gray", "x", "y", "lv"])
-                gray = 5
-                for i in range(1, gray, +1):
-                    x = gray
-                    y = 1
-                    lv = 100
-                    wr.writerow([i, x, y, lv])
-                f.close()
 
-                # tracking + original reading
-                c = open('OC_meas_log.csv', 'r')
-                OC_para = list(csv.reader(c))
-                cnt_OC_para = len(OC_para)
+    def graytrackinglog(self):
+        if os.path.isfile("OC_meas_log.csv"):
+            print "Yes file"
 
-                # list array and write
-                OC_para_D = OC_para[y_OC_para_C:cnt_OC_para]
-                cnt_OC_para_D = len(OC_para_D)
+            # csv file write
+            r1 = open('OC_meas_log.csv', 'r')
+            OC_para_C = list(csv.reader(r1))
+            y_OC_para_C = len(OC_para_C)
+            x_OC_para_C = len(OC_para_C[0])
 
-                if cnt_OC_para_D > y_OC_para_C:
-                    y_OC_para_C = cnt_OC_para_D - y_OC_para_C
-                    for i in range(0, y_OC_para_C):
-                        OC_para_C.append([''] * x_OC_para_C)
-                    for r, c in zip(range(0, len(OC_para_C), +1), range(0, len(OC_para_D), +1)):
-                        OC_para_C[r] = OC_para_C[r] + OC_para_D[c]
-                elif cnt_OC_para_D <= y_OC_para_C:
-                    for i in range(cnt_OC_para_D, y_OC_para_C, +1):
-                        OC_para_D.append(['', '', '', ''])
-                    for r, c in zip(range(0, len(OC_para_C), +1), range(0, len(OC_para_D), +1)):
-                        OC_para_C[c] = OC_para_C[r] + OC_para_D[c]
-                f = open('OC_meas_log.csv', 'wb')
-                a = csv.writer(f)
-                a.writerows(OC_para_C)
-                f.close()
+            # tracking
+            f = open('OC_meas_log.csv', 'ab', )
+            wr = csv.writer(f)
 
-            else:
-                print "NO file"
-                # tracking
-                f = open('OC_meas_log.csv', 'ab', )
-                wr = csv.writer(f)
+            now = datetime.datetime.now()
+            nowDate = now.strftime('%Y-%m-%d')
+            nowTime = now.strftime('%H:%M:%S')
+            wr.writerow([nowDate, nowTime, "", ""])
+            wr.writerow(["gray", "x", "y", "lv"])
+            gray = 5
+            for i in range(1, gray, +1):
+                x = gray
+                y = 1
+                lv = 100
+                wr.writerow([i, x, y, lv])
+            f.close()
 
-                now = datetime.datetime.now()
-                nowDate = now.strftime('%Y-%m-%d')
-                nowTime = now.strftime('%M:%S')
-                wr.writerow([nowDate, nowTime, "", ""])
-                wr.writerow(["gray", "x", "y", "lv"])
-                gray = 6
-                for i in range(1, gray, +1):
-                    x = gray
-                    y = 1
-                    lv = 100
-                    wr.writerow([i, x, y, lv])
-                f.close()
+            # tracking + original reading
+            c = open('OC_meas_log.csv', 'r')
+            OC_para = list(csv.reader(c))
+            cnt_OC_para = len(OC_para)
+
+            # list array and write
+            OC_para_D = OC_para[y_OC_para_C:cnt_OC_para]
+            cnt_OC_para_D = len(OC_para_D)
+
+            if cnt_OC_para_D > y_OC_para_C:
+                y_OC_para_C = cnt_OC_para_D - y_OC_para_C
+                for i in range(0, y_OC_para_C):
+                    OC_para_C.append([''] * x_OC_para_C)
+                for r, c in zip(range(0, len(OC_para_C), +1), range(0, len(OC_para_D), +1)):
+                    OC_para_C[r] = OC_para_C[r] + OC_para_D[c]
+            elif cnt_OC_para_D <= y_OC_para_C:
+                for i in range(cnt_OC_para_D, y_OC_para_C, +1):
+                    OC_para_D.append(['', '', '', ''])
+                for r, c in zip(range(0, len(OC_para_C), +1), range(0, len(OC_para_D), +1)):
+                    OC_para_C[c] = OC_para_C[r] + OC_para_D[c]
+            f = open('OC_meas_log.csv', 'wb')
+            a = csv.writer(f)
+            a.writerows(OC_para_C)
+            f.close()
+
+        else:
+            print "NO file"
+            # tracking
+            f = open('OC_meas_log.csv', 'ab', )
+            wr = csv.writer(f)
+
+            now = datetime.datetime.now()
+            nowDate = now.strftime('%Y-%m-%d')
+            nowTime = now.strftime('%M:%S')
+            wr.writerow([nowDate, nowTime, "", ""])
+            wr.writerow(["gray", "x", "y", "lv"])
+            gray = 6
+            for i in range(1, gray, +1):
+                x = gray
+                y = 1
+                lv = 100
+                wr.writerow([i, x, y, lv])
+            f.close()
